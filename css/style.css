@@ -1,8 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Wallpoet&display=swap');
-
+html{
+    height: 100%;
+}
 body {
     background-color: #5a6300;
     font-family: wallpoet;
+    min-height: 100%;
+    position: relative;
 }
 
 .fixed-top.scrolled .header {
@@ -62,7 +66,7 @@ body {
 }
 
 .carousel {
-    margin-top: 60px;
+    padding-top: 60px;
     margin-bottom: 40px;
 }
 
@@ -102,12 +106,14 @@ footer {
     background-color: #4b4b4b;
     color: #ffffff;
     height: 60px;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
 }
 
 .footer-text {
     font-size: 10px;
     text-align: center;
-    margin-top: 60px;
 }
 
 .credits {
@@ -125,12 +131,12 @@ footer {
 }
 
 .big-title {
-    margin-top: 60px;
     text-align: center;
     border-bottom: #4b4b4b solid 5px;
     color: #ffffff;
     font-size: 24px;
     padding: 10px;
+    padding-top: 60px;
 }
 
 .card {
@@ -154,22 +160,58 @@ footer {
     font-size: 12px;
     line-height: 12px;
 }
-.vid-size{
+
+.vid-size {
     padding-top: 50%;
     position: relative;
     margin-bottom: 10px;
 }
-.vid-fit{
-    position:absolute;
-    top:0;
-    left:0;
+
+.vid-fit {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
 }
-.rules-list{
+
+.rules-list {
     margin-top: 10px;
     margin-bottom: 10px;
     padding-left: 10px;
+}
+
+.contact-form {
+    margin-left: 15px;
+    margin-right: 15px;
+    font-size: 14px;
+}
+
+.input-contact {
+    background-color: transparent;
+    border-style: none;
+    color: #ffffff;
+    border-bottom: #4b4b4b solid 2px;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.question-box {
+    height: 60px;
+}
+.submit-btn{
+    background-color: #4b4b4b;
+    color: #ffffff;
+    border-style: none;
+    width: 100%;
+}
+
+.padding-for-footer{
+    padding-bottom: 100px;
+}
+
+::placeholder {
+    opacity: 1;
 }
 
 .break {
@@ -205,23 +247,28 @@ footer {
     .credits {
         font-size: 17px;
     }
-    .big-title{
+
+    .big-title {
         font-size: 52px;
         border-bottom: #4b4b4b solid 10px;
     }
-    .subtitle{
+
+    .subtitle {
         font-size: 52px;
         border-bottom: #4b4b4b solid 10px;
     }
-    .card-text{
+
+    .card-text {
         font-size: 29px;
         line-height: 29px;
     }
-    .card-title{
+
+    .card-title {
         font-size: 44px;
         border-bottom: #5a6300 solid 15px;
     }
-    .rules-list{
+
+    .rules-list {
         margin-top: 20px;
         margin-bottom: 20px;
         padding-left: 25px;
@@ -275,40 +322,50 @@ footer {
     .credits {
         font-size: 17px;
     }
-    .big-title{
+
+    .big-title {
         font-size: 72px;
         border-bottom: #4b4b4b solid 12px;
     }
-    .subtitle{
+
+    .subtitle {
         font-size: 72px;
         border-bottom: #4b4b4b solid 12px;
     }
-    .card{
+
+    .card {
         height: 100%;
     }
-    .lg-xl-padding-cards{
+
+    .lg-xl-padding-cards {
         padding-bottom: 50px;
     }
-    .card-text{
+
+    .card-text {
         font-size: 24px;
         line-height: 24px;
     }
-    .card-title{
+
+    .card-title {
         font-size: 36px;
         border-bottom: #5a6300 solid 12px;
     }
-    .vid-size{
+
+    .vid-size {
         padding-top: 25%;
     }
-    .vid-fit{
+
+    .vid-fit {
         width: 97%;
         height: 97%;
     }
-    .vid-right{
+
+    .vid-right {
         left: auto;
         right: 0;
     }
-    .rules-list{
+
+    .rules-list {
         margin-top: 30px;
         margin-bottom: 30px;
         padding-left: 40px;
