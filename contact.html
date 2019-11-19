@@ -66,10 +66,10 @@
             or request we will contact you as soon as possible.</p>
     </div>
 </div>
-<form class="contact-form  padding-for-footer">
-    <label for="email"></label><input type="email" id="email" placeholder="email" class="input-contact">
-    <label for="name"></label><input type="text" id="name" placeholder="name" class="input-contact">
-    <label for="question"></label><textarea id="question" placeholder="question or request" class="input-contact question-box"></textarea>
+<form class="contact-form  padding-for-footer" method="post" name="contactform" action="php/contact-form.php">
+    <input type="email" name="email" placeholder="email" class="input-contact">
+    <input type="text" name="name" placeholder="name" class="input-contact">
+    <textarea name="question" placeholder="question or request" class="input-contact question-box"></textarea>
     <input type="submit" value="submit" class="submit-btn">
 </form>
 <footer>
