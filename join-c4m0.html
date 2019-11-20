@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>C4M0 members</title>
+    <title>join C4M0</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -40,7 +40,7 @@
                         <a class="nav-link" href="minigame.html">minigame</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="members.html">members</a>
+                        <a class="nav-link" href="php/members.php">members</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="join-c4m0.html">join C4M0</a>
@@ -56,5 +56,29 @@
         </div>
     </nav>
 </header>
+<div class="container-fluid">
+    <h1 class="big-title">join C4M0</h1>
+</div>
+<div class="container-fluid">
+    <div class="textarea">
+        <h1 class="txtareatitle">want to join C4M0?</h1>
+        <p class="text-p center-txt">if you would like to join C4M0 you can do so by submitting your information down
+            below. be sure to look at the <span class="break"><a href="rules.html" class="white-link">RULES</a></span>
+        </p>
+    </div>
+</div>
+<form class="contact-form  padding-for-footer" method="post" name="joinc4m0form" action="php/join-c4m0.php">
+    <input type="text" name="namebox" placeholder="NAME/NICKNAME" class="input-form">
+    <input type="text" name="discordbox" placeholder="DISCORD NAME (EXAMPLE#1234)" class="input-form">
+    <input type="email" name="emailbox" placeholder="EMAIL ADRESS" class="input-form">
+    <input type="submit" value="SUBMIT" class="submit-btn">
+</form>
+<footer>
+    <p class="footer-text text-p"><span class="break">CONTACT INFO</span><span
+            class="break">mail: c4m0.group@gmail.com</span> facebook: <a
+            href="https://www.facebook.com/groups/c4m0.group" class="white-link">www.facebook.com/groups/c4m0.group</a>
+    </p>
+    <p class="credits text-p">this website is made by: Cas Minke</p>
+</footer>
 </body>
 </html>
