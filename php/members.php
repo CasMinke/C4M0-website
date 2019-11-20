@@ -59,7 +59,7 @@
 <div class="container-fluid">
     <h1 class="big-title">members</h1>
 </div>
-<div class="container-fluid">
+<div class="container-fluid lg-xl-margin-bottom">
     <div class="row nomargin">
         <div class="col-12 col-lg-6 col-xl-6 nopadding">
             <?php
@@ -71,8 +71,8 @@
             echo "<table class='table table-bordered table-dark'>";
             echo "<thead>";
             echo "<tr>";
-            echo "<th scope='col' class='border-color-table'>name/nickname:</th>";
-            echo "<th scope='col' class='border-color-table'>discord:</th>";
+            echo "<th scope='col' class='border-color-table member-th'>name/nickname:</th>";
+            echo "<th scope='col' class='border-color-table member-th'>discord:</th>";
             echo "</tr>";
             echo "</thead>";
             echo "<tbody>";
@@ -86,7 +86,9 @@
             echo "</table>";
             ?>
         </div>
-        <img src="../img/soldiers-members.png" class="col-12 col-lg-6 col-xl-6 nopadding hidden-on-mobile-tablet">
+        <div class="col-12 col-lg-6 col-xl-6 nopadding hidden-on-mobile-tablet">
+            <img src="../img/soldiers-members.png" class="member-img">
+        </div>
     </div>
 </div>
 <div class="container-fluid padding-for-footer">
@@ -100,7 +102,8 @@
 <footer>
     <p class="footer-text text-p"><span class="break">CONTACT INFO</span><span
                 class="break">mail: c4m0.group@gmail.com</span> facebook: <a
-                href="https://www.facebook.com/groups/c4m0.group" class="white-link">www.facebook.com/groups/c4m0.group</a>
+                href="https://www.facebook.com/groups/c4m0.group"
+                class="white-link">www.facebook.com/groups/c4m0.group</a>
     </p>
     <p class="credits text-p">this website is made by: Cas Minke</p>
 </footer>

@@ -448,8 +448,24 @@ footer {
     }
     .table{
         font-size: 20px;
+        height: 100%;
+    }
+    .member-th{
+        text-decoration: underline;
+    }
+    .member-img{
+        width: 100%;
+    }
+    .lg-xl-margin-bottom{
+        margin-bottom: 40px;
     }
     .hidden-on-mobile-tablet{
-        display: block;
+        display: flex;
+        align-items: end;
+    }
+}
+@media (min-width: 992px) and (max-width: 1300px) {
+    .nav-link{
+        font-size: 15px;
     }
 }
