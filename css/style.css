@@ -61,6 +61,7 @@ body {
     padding-left: 10px !important;
     border-bottom: #ffffff solid 5px;
     font-size: 14px;
+    transition: 200ms;
 }
 
 .nav-link:hover {
@@ -126,6 +127,7 @@ footer {
 .white-link {
     color: #ffffff;
     text-decoration: underline;
+    transition: 200ms;
 }
 
 .white-link:hover {
@@ -197,6 +199,10 @@ footer {
     width: 100%;
     margin-top: 10px;
     margin-bottom: 5px;
+    transition: 200ms;
+}
+.input-form:hover{
+    color: #4b4b4b;
 }
 
 .question-box {
@@ -208,7 +214,12 @@ footer {
     color: #ffffff;
     border-style: none;
     width: 100%;
+    transition: 200ms;
 }
+.submit-btn:hover{
+    color: #5a6300;
+}
+
 .backhome-btn {
     background-color: #4b4b4b;
     color: #ffffff;
@@ -222,20 +233,28 @@ footer {
 .padding-for-footer {
     padding-bottom: 100px;
 }
-.border-color-table{
+
+.border-color-table {
     border-color: #5a6300 !important;
 }
-.table{
+
+.table {
     font-size: 10px;
 }
-.table-dark{
+
+.table-dark {
     background-color: #4b4b4b;
+}
+
+.member-th {
+    text-decoration: underline;
 }
 
 ::placeholder {
     opacity: 1;
 }
-.hidden-on-mobile-tablet{
+
+.hidden-on-mobile-tablet {
     display: none;
 }
 
@@ -321,13 +340,16 @@ footer {
     .submit-btn {
         margin-bottom: 20px;
     }
-    .backhome-btn{
+
+    .backhome-btn {
         font-size: 30px;
     }
-    .table{
+
+    .table {
         font-size: 20px;
     }
-    .hidden-on-mobile-tablet{
+
+    .hidden-on-mobile-tablet {
         display: none;
     }
 }
@@ -445,30 +467,33 @@ footer {
     .question-box {
         height: 140px;
     }
-    .backhome-btn{
+
+    .backhome-btn {
         font-size: 48px;
         margin-top: 50px;
     }
-    .table{
+
+    .table {
         font-size: 20px;
         height: 100%;
     }
-    .member-th{
-        text-decoration: underline;
-    }
-    .member-img{
+
+    .member-img {
         width: 100%;
     }
-    .lg-xl-margin-bottom{
+
+    .lg-xl-margin-bottom {
         margin-bottom: 40px;
     }
-    .hidden-on-mobile-tablet{
+
+    .hidden-on-mobile-tablet {
         display: flex;
         align-items: end;
     }
 }
+
 @media (min-width: 992px) and (max-width: 1300px) {
-    .nav-link{
+    .nav-link {
         font-size: 15px;
     }
 }
