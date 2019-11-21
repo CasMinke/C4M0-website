@@ -8,7 +8,7 @@ require_once "c4m0-connect.php";
 
 
 if (!isset($nickname) || trim($nickname) == '' || !isset($discord) || trim($discord) == '' || !isset($email) || trim($email) == '') {
-    header("location: ../join-c4m0-not-filled.html");
+    header("location: ../fields-not-filled.html");
 } else {
     $duplicate = false;
 

@@ -125,13 +125,14 @@ footer {
 }
 
 .white-link {
-    color: #ffffff;
+    color: #ffffff !important;
     text-decoration: underline;
     transition: 200ms;
 }
 
 .white-link:hover {
-    color: #5a6300;
+    color: #5a6300 !important;
+    cursor: pointer;
 }
 
 .big-title {

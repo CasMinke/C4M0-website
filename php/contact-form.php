@@ -1,26 +1,22 @@
 <?php
-$question = $_POST["question"];
-$name = $_POST["name"];
+$id = NULL;
 $email = $_POST["email"];
-$to = "c4m0.group@gmail.com";
-$subject = "question or request";
-$headers = "From: $email";
-$message = "name: $name\nquestion: $question";
+$name = $_POST["name"];
+$question = $_POST["question"];
 
-$user = "$email";
-$usersubject = "your question/request has been received";
-$userheaders = "From: c4m0.group@gmail.com";
-$usermessage = "Thank you for sending your question or request your message will be answered as soon as possible.";
-if (mail($to,$subject,$message,$headers)){
-    echo ("email successfully send to $to ");
-}else{
-    echo ("email sending failed ");
-}
+require_once "c4m0-connect.php";
 
 
-if (mail($user,$usersubject,$usermessage,$userheaders)){
-    echo ("email successfully send to $email ");
-}else{
-    echo ("email sending failed ");
-}
+if (!isset($email) || trim($email) == '' || !isset($name) || trim($name) == '' || !isset($question) || trim($question) == '') {
+    header("location: ../fields-not-filled.html");
+} else {
+        $sql = $conn->prepare("insert into members values (:id, :nickname, :discord, :email)");
 
+        $sql->bindParam(":id", $id);
+        $sql->bindParam(":nickname", $nickname);
+        $sql->bindParam(":discord", $discord);
+        $sql->bindParam(":email", $email);
+
+        $sql->execute();
+        header("Location: ../join-c4m0-complete.html");
+    }
