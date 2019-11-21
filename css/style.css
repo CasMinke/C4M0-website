@@ -250,6 +250,21 @@ footer {
 .member-th {
     text-decoration: underline;
 }
+.card-messages{
+    margin-bottom: 50px;
+    border: white solid 5px;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.card-title-messages{
+    border-color: #ffffff!important;
+}
+.login-to-home{
+    background-color: #4b4b4b;
+    padding: 10px;
+    margin: 20px;
+}
 
 ::placeholder {
     opacity: 1;
