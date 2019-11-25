@@ -19,6 +19,11 @@
 <body>
 <?php
 require_once "c4m0-connect.php";
+session_start();
+if(!isset($_SESSION['username'])){
+    header("Location:../login.html");
+}
+
 $messages = $conn->prepare("select contact, email, question from messages");
 
 $messages->execute();
@@ -33,6 +38,6 @@ foreach ($messages as $message) {
     echo "</div>";
 }
 ?>
-<div class='padding-for-footer container-fluid'><a href='../login.html' class='backhome-btn white-link'>log out</a></div>
+<div class='padding-for-footer container-fluid'><a href='logout.php' class='backhome-btn white-link'>log out</a></div>
 </body>
 </html>
