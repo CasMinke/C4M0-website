@@ -344,6 +344,9 @@ footer {
         font-size: 34px;
         margin-top: -60px;
     }
+    .contact-margin-custom{
+        margin-top: 0px;
+    }
 
     .input-form {
         border-bottom: #4b4b4b solid 5px;
