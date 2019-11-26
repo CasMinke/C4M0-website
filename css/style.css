@@ -202,7 +202,8 @@ footer {
     margin-bottom: 5px;
     transition: 200ms;
 }
-.input-form:hover{
+
+.input-form:hover {
     color: #4b4b4b;
 }
 
@@ -217,7 +218,8 @@ footer {
     width: 100%;
     transition: 200ms;
 }
-.submit-btn:hover{
+
+.submit-btn:hover {
     color: #5a6300;
 }
 
@@ -250,20 +252,164 @@ footer {
 .member-th {
     text-decoration: underline;
 }
-.card-messages{
+
+.card-messages {
     margin-bottom: 50px;
     border: white solid 5px;
     max-width: 1000px;
     margin-left: auto;
     margin-right: auto;
 }
-.card-title-messages{
-    border-color: #ffffff!important;
+
+.card-title-messages {
+    border-color: #ffffff !important;
 }
-.login-to-home{
+
+.login-to-home {
     background-color: #4b4b4b;
     padding: 10px;
     margin: 20px;
+}
+
+.body-game {
+    min-height: 0%;
+    position: relative;
+    touch-action: none;
+}
+
+.game-background {
+    margin-top: 70px;
+    position: relative;
+}
+
+.background-img {
+    width: 100%;
+}
+
+.logo-game {
+    position: absolute;
+    width: 40%;
+    top: 0;
+    left: 30%;
+}
+
+.enemy-stats {
+    position: absolute;
+    height: 50%;
+    width: 30%;
+    background-color: rgba(75, 75, 75, 0.50);
+    top: 0;
+    left: 0;
+    padding: 3% 0% 5% 5%;
+}
+
+.player-stats {
+    position: absolute;
+    height: 50%;
+    width: 30%;
+    background-color: rgba(75, 75, 75, 0.50);
+    right: 0;
+    top: 0;
+    padding: 3% 0% 5% 5%;
+}
+
+.stats {
+    color: #ffffff;
+    font-size: 5px;
+    line-height: 5px;
+    margin-bottom: 5px;
+}
+
+.sniper {
+    position: absolute;
+    height: 50%;
+    bottom: 0;
+    right: 0;
+}
+
+.soldier {
+    position: absolute;
+    height: 50%;
+    bottom: 0;
+    left: 0;
+}
+
+.middle-button-game {
+    position: absolute;
+    top: 40%;
+    margin-left: auto;
+    margin-right: auto;
+    right: 0;
+    left: 0;
+    color: #ffffff;
+    font-size: 7px;
+    background-color: #4b4b4b;
+    border: none;
+    padding: 5px 10px 5px 10px;
+    border-radius: 25px;
+    line-height: 5px;
+}
+
+.left-button-game {
+    position: absolute;
+    top: 40%;
+    left: 30%;
+    color: #ffffff;
+    font-size: 7px;
+    background-color: #4b4b4b;
+    border: none;
+    padding: 5px 10px 5px 10px;
+    border-radius: 25px;
+    line-height: 5px;
+}
+
+.right-button-game {
+    position: absolute;
+    top: 40%;
+    right: 30%;
+    color: #ffffff;
+    font-size: 7px;
+    background-color: #4b4b4b;
+    border: none;
+    padding: 5px 10px 5px 10px;
+    border-radius: 25px;
+    line-height: 5px;
+}
+
+.currency {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+}
+
+.dogtag-currency {
+    position: absolute;
+    height: 80%;
+}
+
+.upgrade1 {
+    position: absolute;
+    bottom: 0;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    margin-bottom: 5%;
+}
+
+.upgrade2 {
+    position: absolute;
+    bottom: 0;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    margin-bottom: 5%;
+}
+
+.price {
+    position: absolute;
+    height: 100%;
 }
 
 ::placeholder {
@@ -272,6 +418,10 @@ footer {
 
 .hidden-on-mobile-tablet {
     display: none;
+}
+
+.underline {
+    text-decoration: underline;
 }
 
 .break {
@@ -344,7 +494,8 @@ footer {
         font-size: 34px;
         margin-top: -60px;
     }
-    .contact-margin-custom{
+
+    .contact-margin-custom {
         margin-top: 0px;
     }
 
@@ -370,6 +521,28 @@ footer {
 
     .hidden-on-mobile-tablet {
         display: none;
+    }
+
+    .stats {
+        font-size: 14px;
+        line-height: 14px;
+    }
+
+    .left-button-game {
+        font-size: 15px;
+        line-height: 15px;
+        padding-bottom: 20px;
+    }
+
+    .middle-button-game {
+        font-size: 15px;
+        line-height: 15px;
+    }
+
+    .right-button-game {
+        font-size: 15px;
+        line-height: 15px;
+        padding-bottom: 20px;
     }
 }
 
@@ -509,10 +682,94 @@ footer {
         display: flex;
         align-items: end;
     }
+
+    .left-button-game {
+        font-size: 22px;
+        line-height: 22px;
+        padding-bottom: 30px;
+    }
+
+    .middle-button-game {
+        font-size: 22px;
+        line-height: 22px;
+    }
+
+    .right-button-game {
+        font-size: 22px;
+        line-height: 22px;
+        padding-bottom: 30px;
+    }
+
+    .stats {
+        font-size: 20px;
+        line-height: 20px;
+    }
+
+    .currency {
+        position: absolute;
+        top: 5%;
+        right: 5%;
+    }
+
+    .dogtag-currency {
+        position: absolute;
+        height: 80%;
+    }
 }
 
 @media (min-width: 992px) and (max-width: 1300px) {
     .nav-link {
         font-size: 15px;
+    }
+}
+
+@media (min-width: 500px) and (max-width: 764px) {
+    .stats{
+        font-size: 9px;
+        line-height: 10px;
+        margin: 5px;
+    }
+
+    .left-button-game {
+        font-size: 10px;
+        line-height: 10px;
+        padding-bottom: 15px;
+    }
+
+    .middle-button-game {
+        font-size: 10px;
+        line-height: 10px;
+    }
+
+    .right-button-game {
+        font-size: 10px;
+        line-height: 10px;
+        padding-bottom: 15px;
+    }
+}
+@media (max-width: 500px) {
+    .stats{
+        font-size: 5px;
+    }
+    .left-button-game{
+        padding-bottom: 10px;
+    }
+    .right-button-game{
+        padding-bottom: 10px;
+    }
+}
+
+@media (max-width: 400px) {
+
+    .left-button-game {
+        font-size: 5px;
+    }
+
+    .middle-button-game {
+        font-size: 5px;
+    }
+
+    .right-button-game {
+        font-size: 5px;
     }
 }
