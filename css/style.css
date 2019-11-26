@@ -274,12 +274,14 @@ footer {
 .body-game {
     min-height: 0%;
     position: relative;
-    touch-action: none;
+    touch-action: pan-y;
 }
-.padding-for-header-game{
+
+.padding-for-header-game {
     padding-top: 70px;
 }
-.tip-game{
+
+.tip-game {
     color: #ffffff;
     font-size: 10px;
 }
@@ -356,6 +358,14 @@ footer {
     line-height: 5px;
 }
 
+.middle-button-game:active {
+    background-color: #3b3b3b;
+}
+
+.middle-button-game:focus {
+    outline: none !important;
+}
+
 .left-button-game {
     position: absolute;
     top: 40%;
@@ -369,6 +379,14 @@ footer {
     line-height: 5px;
 }
 
+.left-button-game:active {
+    background-color: #3b3b3b;
+}
+
+.left-button-game:focus {
+    outline: none !important;
+}
+
 .right-button-game {
     position: absolute;
     top: 40%;
@@ -380,6 +398,14 @@ footer {
     padding: 5px 10px 5px 10px;
     border-radius: 25px;
     line-height: 5px;
+}
+
+.right-button-game:active {
+    background-color: #3b3b3b;
+}
+
+.right-button-game:focus {
+    outline: none !important;
 }
 
 .currency {
@@ -528,7 +554,8 @@ footer {
     .hidden-on-mobile-tablet {
         display: none;
     }
-    .tip-game{
+
+    .tip-game {
         font-size: 20px;
     }
 
@@ -708,7 +735,8 @@ footer {
         line-height: 22px;
         padding-bottom: 30px;
     }
-    .tip-game{
+
+    .tip-game {
         color: #5a6300;
     }
 
@@ -736,7 +764,7 @@ footer {
 }
 
 @media (min-width: 500px) and (max-width: 764px) {
-    .stats{
+    .stats {
         font-size: 9px;
         line-height: 10px;
         margin: 5px;
@@ -759,14 +787,17 @@ footer {
         padding-bottom: 15px;
     }
 }
+
 @media (max-width: 500px) {
-    .stats{
+    .stats {
         font-size: 5px;
     }
-    .left-button-game{
+
+    .left-button-game {
         padding-bottom: 10px;
     }
-    .right-button-game{
+
+    .right-button-game {
         padding-bottom: 10px;
     }
 }
