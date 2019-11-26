@@ -1,5 +1,5 @@
 var player = {level: 1, damage: 10, experience: 0, coins: 0, kills: 0};
-var enemy = {level: 1, health: 100};
+var enemy = {level: 1, health: 100, healthmax: 100, experience: 0};
 var damageovertime = 0;
 var costupgr1 = 5;
 var costupgr2 = 10;
@@ -14,7 +14,8 @@ function attack(){
 }
 function death(){
     player.experience = player.experience + 25;
-    enemy.health = 100;
+    enemy.experience = enemy.experience + 25;
+    enemy.health = enemy.healthmax;
     player.coins++;
     player.kills++;
     console.log("Enemy died!");
@@ -25,6 +26,17 @@ function death(){
 
     if(player.experience === 100){
         level();
+    }
+    if (enemy.experience === 100){
+        enemylevel();
+    }
+    function enemylevel() {
+        enemy.level++;
+        enemy.healthmax= enemy.healthmax + 1;
+        enemy.experience = 0;
+        enemy.health = enemy.healthmax;
+        document.getElementById("enemylevel").innerHTML = "Enemylevel: " + enemy.level;
+
     }
     function level() {
         player.level++;
