@@ -407,6 +407,27 @@ footer {
 .right-button-game:focus {
     outline: none !important;
 }
+.finish{
+    position: absolute;
+    color: #ffffff;
+    font-size: 7px;
+    background-color: #4b4b4b;
+    border: none;
+    padding: 5px 10px 5px 10px;
+    border-radius: 25px;
+    line-height: 5px;
+    bottom: 1%;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+.finish:active{
+    background-color: #3b3b3b;
+}
+.finish:focus{
+    outline: none !important;
+}
 
 .currency {
     position: absolute;
@@ -580,6 +601,10 @@ footer {
         line-height: 15px;
         padding-bottom: 20px;
     }
+    .finish{
+        font-size: 15px;
+        line-height: 15px;
+    }
 }
 
 /*desktop*/
@@ -735,6 +760,10 @@ footer {
         line-height: 22px;
         padding-bottom: 30px;
     }
+    .finish{
+        font-size: 22px;
+        line-height: 22px;
+    }
 
     .tip-game {
         color: #5a6300;
@@ -786,6 +815,10 @@ footer {
         line-height: 10px;
         padding-bottom: 15px;
     }
+    .finish{
+        font-size: 10px;
+        line-height: 10px;
+    }
 }
 
 @media (max-width: 500px) {
@@ -813,6 +846,9 @@ footer {
     }
 
     .right-button-game {
+        font-size: 5px;
+    }
+    .finish{
         font-size: 5px;
     }
 }

@@ -71,7 +71,7 @@
             </div>
             <img src="img/c4m0-logo-original.png" class="logo-game">
             <div class="player-stats">
-                <p class="stats underline">PLAYER</p>
+                <p class="stats underline" id="name">PLAYER</p>
                 <p class="stats" id="rank">Rank: Rookie</p>
                 <p class="stats" id="rifle">Rifle: M1 Garand</p>
                 <p class="stats" id="playerlevel">Playerlevel: 1</p>
@@ -83,13 +83,15 @@
             <img src="img/soldier.png" class="soldier" id="soldier">
         </div>
         <button class="left-button-game" onclick="upgrade1()">damage<span class="break">per shot</span>
-        <p class="stats upgrade1" id="upgrade1">5 <img src="img/dog-tag.png" class="price"></p></button>
+            <p class="stats upgrade1" id="upgrade1">5 <img src="img/dog-tag.png" class="price"></p></button>
         <button class="middle-button-game" onclick="attack()">pull the<span class="break">trigger</span></button>
         <button class="right-button-game" onclick="upgrade2()">bleed<span class="break">damage</span>
-        <p class="stats upgrade2" id="upgrade2">10 <img src="img/dog-tag.png" class="price"></p></button>
+            <p class="stats upgrade2" id="upgrade2">10 <img src="img/dog-tag.png" class="price"></p></button>
         <div class="currency">
             <p class="stats" id="coins">0 <img src="img/dog-tag.png" class="dogtag-currency"></p>
         </div>
+        <button class="finish" onclick="finish()">easter egg reach <span
+                class="break">playerlevel 500 to unlock</span></button>
     </div>
 </div>
 <p class="text-p padding-for-footer center-txt tip-game">this game works best in landscape mode!!</p>
