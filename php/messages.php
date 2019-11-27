@@ -22,6 +22,8 @@ require_once "c4m0-connect.php";
 session_start();
 if(!isset($_SESSION['username'])){
     header("Location:../login.html");
+}else{
+    session_destroy();
 }
 
 $messages = $conn->prepare("select contact, email, question from messages");
