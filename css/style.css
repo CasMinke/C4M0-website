@@ -281,11 +281,6 @@ footer {
     padding-top: 15px;
 }
 
-.tip-game {
-    color: #ffffff;
-    font-size: 10px;
-}
-
 .game-background {
     position: relative;
 }
@@ -407,7 +402,8 @@ footer {
 .right-button-game:focus {
     outline: none !important;
 }
-.finish{
+
+.finish {
     position: absolute;
     color: #ffffff;
     font-size: 7px;
@@ -422,10 +418,54 @@ footer {
     margin-left: auto;
     margin-right: auto;
 }
-.finish:active{
+
+.finish:active {
     background-color: #3b3b3b;
 }
-.finish:focus{
+
+.finish:focus {
+    outline: none !important;
+}
+
+.lefttop-button-game {
+    position: absolute;
+    top: 30%;
+    left: 30%;
+    color: #ffffff;
+    font-size: 7px;
+    background-color: #4b4b4b;
+    border: none;
+    padding: 5px 10px 5px 10px;
+    border-radius: 25px;
+    line-height: 5px;
+}
+
+.lefttop-button-game:active {
+    background-color: #3b3b3b;
+}
+
+.lefttop-button-game:focus {
+    outline: none !important;
+}
+
+.righttop-button-game {
+    position: absolute;
+    top: 30%;
+    right: 30%;
+    color: #ffffff;
+    font-size: 7px;
+    background-color: #4b4b4b;
+    border: none;
+    padding: 5px 10px 5px 10px;
+    border-radius: 25px;
+    line-height: 5px;
+}
+
+.righttop-button-game:active {
+    background-color: #3b3b3b;
+}
+
+.righttop-button-game:focus {
     outline: none !important;
 }
 
@@ -433,6 +473,11 @@ footer {
     position: absolute;
     top: 5%;
     right: 5%;
+}
+
+.dogtag-loot {
+    position: absolute;
+    height: 5%;
 }
 
 .dogtag-currency {
@@ -451,6 +496,26 @@ footer {
 }
 
 .upgrade2 {
+    position: absolute;
+    bottom: 0;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    margin-bottom: 5%;
+}
+
+.upgrade3 {
+    position: absolute;
+    bottom: 0;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    margin-bottom: 5%;
+}
+
+.upgrade4 {
     position: absolute;
     bottom: 0;
     margin-left: auto;
@@ -576,10 +641,6 @@ footer {
         display: none;
     }
 
-    .tip-game {
-        font-size: 20px;
-    }
-
     .stats {
         font-size: 14px;
         line-height: 14px;
@@ -601,7 +662,20 @@ footer {
         line-height: 15px;
         padding-bottom: 20px;
     }
-    .finish{
+
+    .lefttop-button-game {
+        font-size: 15px;
+        line-height: 15px;
+        padding-bottom: 20px;
+    }
+
+    .righttop-button-game {
+        font-size: 15px;
+        line-height: 15px;
+        padding-bottom: 20px;
+    }
+
+    .finish {
         font-size: 15px;
         line-height: 15px;
     }
@@ -760,13 +834,22 @@ footer {
         line-height: 22px;
         padding-bottom: 30px;
     }
-    .finish{
+
+    .lefttop-button-game {
         font-size: 22px;
         line-height: 22px;
+        padding-bottom: 30px;
     }
 
-    .tip-game {
-        color: #5a6300;
+    .righttop-button-game {
+        font-size: 22px;
+        line-height: 22px;
+        padding-bottom: 30px;
+    }
+
+    .finish {
+        font-size: 22px;
+        line-height: 22px;
     }
 
     .stats {
@@ -805,6 +888,12 @@ footer {
         padding-bottom: 15px;
     }
 
+    .lefttop-button-game {
+        font-size: 10px;
+        line-height: 10px;
+        padding-bottom: 15px;
+    }
+
     .middle-button-game {
         font-size: 10px;
         line-height: 10px;
@@ -815,7 +904,14 @@ footer {
         line-height: 10px;
         padding-bottom: 15px;
     }
-    .finish{
+
+    .righttop-button-game {
+        font-size: 10px;
+        line-height: 10px;
+        padding-bottom: 15px;
+    }
+
+    .finish {
         font-size: 10px;
         line-height: 10px;
     }
@@ -833,6 +929,14 @@ footer {
     .right-button-game {
         padding-bottom: 10px;
     }
+
+    .righttop-button-game {
+        padding-bottom: 10px;
+    }
+
+    .lefttop-button-game {
+        padding-bottom: 10px;
+    }
 }
 
 @media (max-width: 400px) {
@@ -848,7 +952,16 @@ footer {
     .right-button-game {
         font-size: 5px;
     }
-    .finish{
+
+    .lefttop-button-game {
+        font-size: 5px;
+    }
+
+    .righttop-button-game {
+        font-size: 5px;
+    }
+
+    .finish {
         font-size: 5px;
     }
 }

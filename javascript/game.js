@@ -1,8 +1,27 @@
-var player = {level: 1, damage: 10, experience: 0, coins: 0, kills: 0};
-var enemy = {level: 1, health: 100, healthmax: 100, experience: 0};
+var player = {
+    level: 1,
+    damage: 10,
+    experience: 0,
+    coins: 0,
+    kills: 0,
+    extracoins: 0,
+    experienceneeded: 100,
+    experienceperkill: 25
+};
+var enemy = {
+    level: 1,
+    health: 100,
+    healthmax: 100,
+    experience: 0,
+    loot: 1,
+    experienceneeded: 100,
+    experienceperdeath: 25
+};
 var damageovertime = 0;
 var costupgr1 = 5;
 var costupgr2 = 10;
+var costupgr3 = 15;
+var costupgr4 = 30;
 
 
 function attack() {
@@ -11,46 +30,53 @@ function attack() {
     if (enemy.health <= 0) {
         death();
     }
-    document.getElementById("enemyHealth").innerHTML = "Health: " + enemy.health;
+    document.getElementById("enemyHealth").innerHTML = "Health: " + enemy.health + "/" + enemy.healthmax + "hp";
 }
 
 function death() {
-    player.experience = player.experience + 25;
-    enemy.experience = enemy.experience + 25;
+    player.experience = player.experience + player.experienceperkill;
+    enemy.experience = enemy.experience + enemy.experienceperdeath;
     enemy.health = enemy.healthmax;
-    player.coins++;
+    player.coins = player.coins + 1 + player.extracoins;
     player.kills++;
     console.log("Enemy died!");
     document.getElementById("coins").innerHTML = player.coins + "<img src='img/dog-tag.png' class='dogtag-currency'>";
-    document.getElementById("experience").innerHTML = "Experience: " + player.experience;
+    document.getElementById("experience").innerHTML = "Experience: " + player.experience + "/" + player.experienceneeded + "xp";
     document.getElementById("kills").innerHTML = "Confirmed kills: " + player.kills;
     document.getElementById("deaths").innerHTML = "Deaths: " + player.kills;
 
-    if (player.experience === 100) {
+    if (player.experience >= player.experienceneeded) {
         level();
     }
-    if (enemy.experience === 100) {
+    if (enemy.experience >= enemy.experienceneeded) {
         enemylevel();
     }
-    if (player.coins > 999999999){
+    if (player.coins > 999999999) {
         player.coins = 999999999;
         document.getElementById("coins").innerHTML = player.coins + "<img src='img/dog-tag.png' class='dogtag-currency'>";
     }
 
     function enemylevel() {
         enemy.level++;
-        enemy.healthmax = enemy.healthmax + 2;
+        enemy.healthmax = enemy.healthmax + 50;
         enemy.experience = 0;
         enemy.health = enemy.healthmax;
+        enemy.experienceneeded = enemy.experienceneeded + 5;
+        player.experienceperkill = player.experienceperkill + 1;
+        enemy.experienceperdeath = enemy.experienceperdeath + 1;
         document.getElementById("enemylevel").innerHTML = "Enemylevel: " + enemy.level;
+        document.getElementById("reward").innerHTML = "Reward: " + player.experienceperkill + "xp"
 
     }
 
     function level() {
         player.level++;
+        player.damage++;
         player.experience = 0;
+        player.experienceneeded = player.experienceneeded + 5;
         document.getElementById("playerlevel").innerHTML = "Playerlevel: " + player.level;
-        document.getElementById("experience").innerHTML = "Experience: " + player.experience;
+        document.getElementById("experience").innerHTML = "Experience: " + player.experience + "/" + player.experienceneeded + "xp";
+        document.getElementById("damage").innerHTML = "Damage per shot: " + player.damage;
 
         if (player.level === 20) {
             document.getElementById("rifle").innerHTML = "Rifle: S.V.D";
@@ -81,7 +107,7 @@ function upgrade1() {
     } else {
         player.damage++;
         player.coins = player.coins - costupgr1;
-        costupgr1 = costupgr1 + 5;
+        costupgr1 = costupgr1 * 2;
         document.getElementById("upgrade1").innerHTML = costupgr1 + " <img src='img/dog-tag.png' class='price'>";
         document.getElementById("coins").innerHTML = player.coins + "<img src='img/dog-tag.png' class='dogtag-currency'>";
         document.getElementById("damage").innerHTML = "Damage per shot: " + player.damage;
@@ -94,11 +120,40 @@ function upgrade2() {
     } else {
         player.coins = player.coins - costupgr2;
         document.getElementById("coins").innerHTML = player.coins + "<img src='img/dog-tag.png' class='dogtag-currency'>";
-        costupgr2 = costupgr2 + 10;
+        costupgr2 = costupgr2 * 2;
         damageovertime++;
         document.getElementById("upgrade2").innerHTML = costupgr2 + " <img src='img/dog-tag.png' class='price'>";
         document.getElementById("damageovertime").innerHTML = "Bleed damage: LVL " + damageovertime;
         var timer = setInterval(upgradeuitvoer, 1000);
+    }
+}
+
+function upgrade3() {
+    if (player.coins < costupgr3) {
+        alert("to buy this upgrade you need to have " + costupgr3 + " Dogtags");
+    } else {
+        player.extracoins++;
+        enemy.loot++;
+        player.coins = player.coins - costupgr3;
+        costupgr3 = costupgr3 * 2;
+        document.getElementById("upgrade3").innerHTML = costupgr3 + " <img src='img/dog-tag.png' class='price'>";
+        document.getElementById("coins").innerHTML = player.coins + "<img src='img/dog-tag.png' class='dogtag-currency'>";
+        document.getElementById("loot").innerHTML = "Loot: " + enemy.loot + "<img src='img/dog-tag.png' class='dogtag-loot'>"
+    }
+}
+
+function upgrade4() {
+    if (player.coins < costupgr4) {
+        alert("to buy this upgrade you need to have " + costupgr4 + " Dogtags");
+    } else {
+        player.level = player.level + 5;
+        player.damage = player.damage + 5;
+        player.coins = player.coins - costupgr4;
+        costupgr4 = costupgr4 * 2;
+        document.getElementById("upgrade4").innerHTML = costupgr4 + " <img src='img/dog-tag.png' class='price'>";
+        document.getElementById("coins").innerHTML = player.coins + "<img src='img/dog-tag.png' class='dogtag-currency'>";
+        document.getElementById("playerlevel").innerHTML = "Playerlevel: " + player.level;
+        document.getElementById("damage").innerHTML = "Damage per shot: " + player.damage;
     }
 }
 
@@ -108,7 +163,7 @@ function upgradeuitvoer() {
         animatie();
         death();
     }
-    document.getElementById("enemyHealth").innerHTML = "Health: " + enemy.health;
+    document.getElementById("enemyHealth").innerHTML = "Health: " + enemy.health + "/" + enemy.healthmax + "hp";
 }
 
 function animatie() {
@@ -135,12 +190,17 @@ function normalsoldier() {
 function normalsniper() {
     sniper.src = "img/sniper.png"
 }
+
 function finish() {
-    if (player.level >= 500){
+    if (player.level >= 500) {
         player.coins = 999999999;
         document.getElementById("coins").innerHTML = player.coins + "<img src='img/dog-tag.png' class='dogtag-currency'>";
         alert("have fun with 999999999 dogtags");
-    }else {
+    } else {
         alert("you need to be level 500 or higher to unlock the easter egg");
     }
+}
+
+if (window.innerHeight > window.innerWidth) {
+    alert("TIP: this game works best in landscape mode");
 }
