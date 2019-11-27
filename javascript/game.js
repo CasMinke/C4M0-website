@@ -1,22 +1,5 @@
-var player = {
-    level: 1,
-    damage: 10,
-    experience: 0,
-    coins: 0,
-    kills: 0,
-    extracoins: 0,
-    experienceneeded: 100,
-    experienceperkill: 25
-};
-var enemy = {
-    level: 1,
-    health: 100,
-    healthmax: 100,
-    experience: 0,
-    loot: 1,
-    experienceneeded: 100,
-    experienceperdeath: 25
-};
+var player = {level: 1, damage: 10, experience: 0, coins: 0, kills: 0, extracoins: 0, experienceneeded: 100, experienceperkill: 25};
+var enemy = {level: 1, health: 100, healthmax: 100, experience: 0, loot: 1, experienceneeded: 100, experienceperdeath: 25};
 var damageovertime = 0;
 var costupgr1 = 5;
 var costupgr2 = 10;
@@ -123,7 +106,7 @@ function upgrade2() {
         costupgr2 = costupgr2 * 2;
         damageovertime++;
         document.getElementById("upgrade2").innerHTML = costupgr2 + " <img src='img/dog-tag.png' class='price'>";
-        document.getElementById("damageovertime").innerHTML = "Bleed damage: LVL " + damageovertime;
+        document.getElementById("damageovertime").innerHTML = "Bleed damage: " + damageovertime + " dmg/sec";
         var timer = setInterval(upgradeuitvoer, 1000);
     }
 }
