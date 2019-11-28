@@ -15,6 +15,7 @@
             integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
             crossorigin="anonymous"></script>
     <link href="../css/style.css" rel="stylesheet">
+    <script src="../javascript/session-destroy.js"></script>
 </head>
 <body>
 <?php
@@ -27,6 +28,7 @@ if(!isset($_SESSION['username']) || !isset($_SESSION['password'])){
 $messages = $conn->prepare("select id, contact, email, question from messages");
 
 $messages->execute();
+echo "<div class='textarea'>logged in as: " . $_SESSION['username'] . "</div>";
 echo "<div class='container-fluid'>";
 echo "<div class='row'>";
 
@@ -54,6 +56,13 @@ foreach ($messages as $message) {
 echo "</div>";
 echo "</div>";
 ?>
-<div class='container-fluid lg-xl-padding-cards-login'><a href='logout.php' class='backhome-btn white-link'>log out</a></div>
+<div class='container-fluid padding-for-footer'><a href='logout.php' class='backhome-btn white-link'>log out</a></div>
+<footer>
+    <p class="footer-text text-p"><span class="break">CONTACT INFO</span><span
+                class="break">mail: c4m0.group@gmail.com</span> facebook: <a
+                href="https://www.facebook.com/groups/c4m0.group"
+                class="white-link" target="_blank">www.facebook.com/groups/c4m0.group</a></p>
+    <p class="credits text-p">this website is made by: Cas Minke</p>
+</footer>
 </body>
 </html>
