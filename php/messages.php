@@ -54,6 +54,6 @@ foreach ($messages as $message) {
 echo "</div>";
 echo "</div>";
 ?>
-<div class='padding-for-footer container-fluid'><a href='logout.php' class='backhome-btn white-link'>log out</a></div>
+<div class='container-fluid lg-xl-padding-cards-login'><a href='logout.php' class='backhome-btn white-link'>log out</a></div>
 </body>
 </html>
