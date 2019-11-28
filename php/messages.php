@@ -22,23 +22,37 @@ require_once "c4m0-connect.php";
 session_start();
 if(!isset($_SESSION['username'])){
     header("Location:../login.html");
-}else{
-    session_destroy();
 }
 
-$messages = $conn->prepare("select contact, email, question from messages");
+$messages = $conn->prepare("select id, contact, email, question from messages");
 
 $messages->execute();
+echo "<div class='container-fluid'>";
+echo "<div class='row'>";
 
 foreach ($messages as $message) {
+    $id = $message["id"];
+    echo "<div class='col-12 col-lg-4 col-xl-4 lg-xl-padding-cards-login'>";
     echo "<div class='card card-messages'>";
-    echo "<h5 class='card-title card-title-messages'>" . $message["contact"] . "</h5>";
-    echo "<h5 class='card-title card-title-messages'>" . $message["email"] . "</h5>";
+    echo "<h5 class='card-title'>" . $message["contact"] . "</h5>";
+    echo "<h5 class='card-title2'>" . $message["email"] . "</h5>";
     echo "<div class='card-body'>";
     echo "<p class='card-text' style='text-align: center'>" . $message["question"] . "</p>";
+
+    echo "<form action='delete-message.php' method='post' class='center-txt'>";
+    echo "<input type='hidden' name='id' value=$id>";
+    echo "<input type='hidden' name='delete' value='0'>";
+    echo "<input type='checkbox' name='delete' id='$id' value='1'>";
+    echo "<label class='label-delete' for='$id'>i am sure i want to delete this message.</label><br>";
+    echo "<input type='submit' value='delete' class='delete-btn'>";
+    echo "</form>";
+
+    echo "</div>";
     echo "</div>";
     echo "</div>";
 }
+echo "</div>";
+echo "</div>";
 ?>
 <div class='padding-for-footer container-fluid'><a href='logout.php' class='backhome-btn white-link'>log out</a></div>
 </body>

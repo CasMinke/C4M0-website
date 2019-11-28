@@ -79,12 +79,14 @@ body {
     font-size: 12px;
     padding: 20px;
     line-height: 12px;
+    text-align: center;
 }
 
 .txtareatitle {
     font-size: 18px;
     text-align: center;
     border-bottom: #5a6300 solid 5px;
+    display: inline-block;
 }
 
 .subtitle {
@@ -99,6 +101,7 @@ body {
 
 .text-p {
     margin-bottom: 0px;
+    text-align: left;
 }
 
 .center-txt {
@@ -156,9 +159,20 @@ footer {
     text-align: center;
     font-size: 18px;
     border-bottom: #5a6300 solid 5px;
-    margin-left: 15px;
-    margin-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
     margin-top: 10px;
+    display: inline-block;
+}
+
+.card-title2 {
+    text-align: center;
+    font-size: 15px;
+    border-bottom: #5a6300 solid 5px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    display: inline-block;
 }
 
 .card-text {
@@ -184,6 +198,7 @@ footer {
     margin-top: 10px;
     margin-bottom: 10px;
     padding-left: 10px;
+    text-align: left;
 }
 
 .contact-form {
@@ -259,10 +274,6 @@ footer {
     max-width: 1000px;
     margin-left: auto;
     margin-right: auto;
-}
-
-.card-title-messages {
-    border-color: #ffffff !important;
 }
 
 .login-to-home {
@@ -530,6 +541,21 @@ footer {
     height: 100%;
 }
 
+.delete-btn {
+    background-color: #5a6300;
+    color: #ffffff;
+    border: #ffffff solid 1px;
+    transition: 200ms;
+}
+
+.label-delete {
+    font-size: 9px;
+}
+
+.delete-btn:hover {
+    background-color: #4b4b4b;
+}
+
 ::placeholder {
     opacity: 1;
 }
@@ -679,6 +705,20 @@ footer {
         font-size: 15px;
         line-height: 15px;
     }
+
+    .card-title2 {
+        text-align: center;
+        font-size: 25px;
+        border-bottom: #5a6300 solid 5px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 10px;
+        display: inline-block;
+    }
+
+    .label-delete {
+        font-size: 18px;
+    }
 }
 
 /*desktop*/
@@ -749,6 +789,10 @@ footer {
 
     .lg-xl-padding-cards {
         padding-bottom: 50px;
+    }
+
+    .lg-xl-padding-cards-login {
+        padding-bottom: 30px;
     }
 
     .card-text {
@@ -867,11 +911,28 @@ footer {
         position: absolute;
         height: 80%;
     }
+
+    .card-title2 {
+        text-align: center;
+        font-size: 18px;
+        border-bottom: #5a6300 solid 5px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 10px;
+        display: inline-block;
+    }
+
+    .label-delete {
+        font-size: 15px;
+    }
 }
 
 @media (min-width: 992px) and (max-width: 1300px) {
     .nav-link {
         font-size: 15px;
+    }
+    .label-delete{
+        font-size: 10px;
     }
 }
 
