@@ -20,7 +20,7 @@
 <?php
 require_once "c4m0-connect.php";
 session_start();
-if(!isset($_SESSION['username'])){
+if(!isset($_SESSION['username']) || !isset($_SESSION['password'])){
     header("Location:../login.html");
 }
 
