@@ -33,7 +33,7 @@ if (!isset($highscore) || trim($highscore) == 0 || !isset($nickname) || trim($ni
             header("location: game-leaderboard.php");
             exit();
         }else{
-            echo "<script>alert('you didnt improve your highscore'); window.location = '../minigame.html'</script>";
+            echo "<script>alert('you did not improve your highscore, improve your highscore to save it'); window.location = '../minigame.html'</script>";
             exit();
         }
 
