@@ -6,6 +6,7 @@ var costupgr2 = 10;
 var costupgr3 = 15;
 var costupgr4 = 30;
 var upgradelvls = 5;
+var timer = setInterval(upgradeuitvoer, 1000);
 
 if (localStorage.getItem("player.level") == null) {
 
@@ -58,6 +59,7 @@ function attack() {
         death();
     }
     document.getElementById("enemyHealth").innerHTML = "Health: " + enemy.health + "/" + enemy.healthmax + "hp";
+    save();
 }
 
 function death() {
@@ -105,26 +107,25 @@ function death() {
         document.getElementById("damage").innerHTML = "Damage per shot: " + player.damage;
         checklvl();
     }
-    save();
 }
 function checklvl() {
-    if (player.level === 20) {
+    if (player.level >= 20 && player.level < 50) {
         document.getElementById("rifle").innerHTML = "Rifle: S.V.D";
         document.getElementById("rank").innerHTML = "Rank: Ranger";
     }
-    if (player.level === 50) {
+    if (player.level >= 50 && player.level < 100) {
         document.getElementById("rifle").innerHTML = "Rifle: Scar-H";
         document.getElementById("rank").innerHTML = "Rank: Marksman";
     }
-    if (player.level === 100) {
+    if (player.level >= 100 && player.level < 250) {
         document.getElementById("rifle").innerHTML = "Rifle: M40A5";
         document.getElementById("rank").innerHTML = "Rank: Sniper";
     }
-    if (player.level === 250) {
+    if (player.level >= 250 && player.level < 500) {
         document.getElementById("rifle").innerHTML = "Rifle: A.W.M";
         document.getElementById("rank").innerHTML = "Rank: Sharpshooter";
     }
-    if (player.level === 500) {
+    if (player.level >= 500) {
         document.getElementById("rifle").innerHTML = "Rifle: Barret .50 Call";
         document.getElementById("rank").innerHTML = "Rank: Special Forces Sharpshooter";
     }
@@ -140,6 +141,7 @@ function upgrade1() {
         document.getElementById("upgrade1").innerHTML = costupgr1 + " <img src='img/dog-tag.png' class='price'>";
         document.getElementById("coins").innerHTML = player.coins + "<img src='img/dog-tag.png' class='dogtag-currency'>";
         document.getElementById("damage").innerHTML = "Damage per shot: " + player.damage;
+        save();
     }
 }
 
@@ -153,7 +155,7 @@ function upgrade2() {
         damageovertime++;
         document.getElementById("upgrade2").innerHTML = costupgr2 + " <img src='img/dog-tag.png' class='price'>";
         document.getElementById("damageovertime").innerHTML = "Bleed damage: " + damageovertime + " dmg/sec";
-        var timer = setInterval(upgradeuitvoer, 1000);
+        save();
     }
 }
 
@@ -168,6 +170,7 @@ function upgrade3() {
         document.getElementById("upgrade3").innerHTML = costupgr3 + " <img src='img/dog-tag.png' class='price'>";
         document.getElementById("coins").innerHTML = player.coins + "<img src='img/dog-tag.png' class='dogtag-currency'>";
         document.getElementById("loot").innerHTML = "Loot: " + enemy.loot + "<img src='img/dog-tag.png' class='dogtag-loot'>";
+        save();
     }
 }
 
@@ -184,16 +187,19 @@ function upgrade4() {
         document.getElementById("coins").innerHTML = player.coins + "<img src='img/dog-tag.png' class='dogtag-currency'>";
         document.getElementById("playerlevel").innerHTML = "Playerlevel: " + player.level;
         document.getElementById("damage").innerHTML = "Damage per shot: " + player.damage;
+        checklvl();
+        save();
     }
 }
 
 function upgradeuitvoer() {
-    enemy.health = enemy.health - 1;
+    enemy.health = enemy.health - damageovertime;
     if (enemy.health <= 0) {
         animatie();
         death();
     }
     document.getElementById("enemyHealth").innerHTML = "Health: " + enemy.health + "/" + enemy.healthmax + "hp";
+    save();
 }
 
 function animatie() {
