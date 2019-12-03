@@ -9,6 +9,7 @@ if (!isset($highscore) || trim($highscore) == 0 || !isset($nickname) || trim($ni
     header("location: ../fields-not-filled.html");
 } else {
     $duplicate = false;
+    $higherthanhighscore = false;
 
     $searchfordup = $conn->prepare("select * from game");
     $searchfordup->execute();
@@ -17,20 +18,26 @@ if (!isset($highscore) || trim($highscore) == 0 || !isset($nickname) || trim($ni
         if ($nickname == $search["nickname"]) {
             $duplicate = true;
         }
-        if ($highscore == $search["highscore"]) {
-            $duplicate = true;
+        if ($highscore > $search["highscore"]){
+            $higherthanhighscore = true;
         }
     }
-    if ($duplicate){
-        $sql = $conn->prepare("update game set id = :id, nickname = :nickname, highscore = :highscore where nickname = :nickname");
+    if ($duplicate) {
+        if ($higherthanhighscore) {
+            $sql = $conn->prepare("update game set nickname = :nickname, highscore = :highscore where nickname = :nickname");
 
-        $sql->bindParam(":id", $search["id"]);
-        $sql->bindParam(":nickname", $nickname);
-        $sql->bindParam(":highscore", $highscore);
+            $sql->bindParam(":nickname", $nickname);
+            $sql->bindParam(":highscore", $highscore);
 
-        $sql->execute();
-        header("location: game-leaderboard.php");
-    }else{
+            $sql->execute();
+            header("location: game-leaderboard.php");
+            exit();
+        }else{
+            echo "<script>alert('you didnt improve your highscore'); window.location = '../minigame.html'</script>";
+            exit();
+        }
+
+    } else {
         $sql = $conn->prepare("insert into game values (:id, :highscore, :nickname)");
 
         $sql->bindParam(":id", $id);
@@ -39,10 +46,8 @@ if (!isset($highscore) || trim($highscore) == 0 || !isset($nickname) || trim($ni
 
         $sql->execute();
         header("Location: game-leaderboard.php");
+        exit();
     }
-
-
-
 
 
 }

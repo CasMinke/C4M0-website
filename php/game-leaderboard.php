@@ -64,7 +64,7 @@
         <div class="col-12 col-lg-6 col-xl-6 nopadding">
             <?php
             require_once "c4m0-connect.php";
-            $scores = $conn->prepare("select nickname, highscore from game");
+            $scores = $conn->prepare("select nickname, highscore from game order by highscore desc");
 
             $scores->execute();
 
