@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>C4M0 members</title>
+    <title>C4M0 leaderboard</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -57,7 +57,7 @@
     </nav>
 </header>
 <div class="container-fluid">
-    <h1 class="big-title">members</h1>
+    <h1 class="big-title">leaderboard</h1>
 </div>
 <div class="container-fluid lg-xl-margin-bottom">
     <div class="row nomargin">
