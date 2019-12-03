@@ -1,4 +1,4 @@
-var player = {level: 1, damage: 10, experience: 0, coins: 0, kills: 0, extracoins: 0, experienceneeded: 100, experienceperkill: 25};
+var player = {level: 1, damage: 10, experience: 0, coins: 0, kills: 0, extracoins: 0, experienceneeded: 100, experienceperkill: 25, extradamage: 5};
 var enemy = {level: 1, health: 100, healthmax: 100, experience: 0, loot: 1, experienceneeded: 100, experienceperdeath: 25};
 var damageovertime = 0;
 var costupgr1 = 5;
@@ -32,6 +32,7 @@ if (localStorage.getItem("player.level") == null) {
     costupgr3 = parseInt(localStorage.getItem("costupgr3"));
     costupgr4 = parseInt(localStorage.getItem("costupgr4"));
     upgradelvls = parseInt(localStorage.getItem("upgradelvls"));
+    player.extradamage = parseInt(localStorage.getItem("player.extradamage"));
 }
 
 function refreshall() {
@@ -44,7 +45,7 @@ function refreshall() {
     document.getElementById("reward").innerHTML = "Reward: " + player.experienceperkill + "xp";
     document.getElementById("playerlevel").innerHTML = "Playerlevel: " + player.level;
     document.getElementById("damage").innerHTML = "Damage per shot: " + player.damage;
-    document.getElementById("upgrade1").innerHTML = costupgr1 + " <img src='img/dog-tag.png' class='price'>";
+    document.getElementById("upgrade1").innerHTML = "+ " + player.extradamage + " dmg<span class='break'>per shot</span><p class='stats upgrade1'>" + costupgr1 + "<img src='img/dog-tag.png' class='price'></p>";
     document.getElementById("upgrade2").innerHTML = costupgr2 + " <img src='img/dog-tag.png' class='price'>";
     document.getElementById("damageovertime").innerHTML = "Bleed damage: " + damageovertime + " dmg/sec";
     document.getElementById("upgrade3").innerHTML = costupgr3 + " <img src='img/dog-tag.png' class='price'>";
@@ -109,25 +110,53 @@ function death() {
     }
 }
 function checklvl() {
-    if (player.level >= 20 && player.level < 50) {
-        document.getElementById("rifle").innerHTML = "Rifle: S.V.D";
-        document.getElementById("rank").innerHTML = "Rank: Ranger";
-    }
-    if (player.level >= 50 && player.level < 100) {
-        document.getElementById("rifle").innerHTML = "Rifle: Scar-H";
+    if (player.level >= 25 && player.level < 50) {
+        document.getElementById("rifle").innerHTML = "Rifle: Type-88";
         document.getElementById("rank").innerHTML = "Rank: Marksman";
     }
-    if (player.level >= 100 && player.level < 250) {
-        document.getElementById("rifle").innerHTML = "Rifle: M40A5";
+    if (player.level >= 50 && player.level < 75) {
+        document.getElementById("rifle").innerHTML = "Rifle: Fall";
+        document.getElementById("rank").innerHTML = "Rank: Marksman Elite";
+    }
+    if (player.level >= 75 && player.level < 100){
+        document.getElementById("rifle").innerHTML = "Rifle: M39";
+        document.getElementById("rank").innerHTML = "Rank: Marksman Sergeant";
+    }
+    if (player.level >= 100 && player.level < 150) {
+        document.getElementById("rifle").innerHTML = "Rifle: Scar-H";
         document.getElementById("rank").innerHTML = "Rank: Sniper";
     }
-    if (player.level >= 250 && player.level < 500) {
-        document.getElementById("rifle").innerHTML = "Rifle: A.W.M";
+    if (player.level >= 150 && player.level < 200){
+        document.getElementById("rifle").innerHTML = "Rifle: SPG1";
+        document.getElementById("rank").innerHTML = "Rank: Sniper Elite";
+    }
+    if (player.level >= 200 && player.level < 250){
+        document.getElementById("rifle").innerHTML = "Rifle: RSASS";
+        document.getElementById("rank").innerHTML = "Rank: Sniper Sergeant";
+    }
+    if (player.level >= 250 && player.level < 300) {
+        document.getElementById("rifle").innerHTML = "Rifle: SVD";
         document.getElementById("rank").innerHTML = "Rank: Sharpshooter";
     }
+    if (player.level >= 300 && player.level < 350){
+        document.getElementById("rifle").innerHTML = "Rifle: M110";
+        document.getElementById("rank").innerHTML = "Rank: Sharpshooter Elite";
+    }
+    if (player.level >= 350 && player.level < 400){
+        document.getElementById("rifle").innerHTML = "Rifle: M2010";
+        document.getElementById("rank").innerHTML = "Rank: Sharpshooter Sergeant";
+    }
+    if (player.level >= 400 && player.level < 450){
+        document.getElementById("rifle").innerHTML = "Rifle: Gol";
+        document.getElementById("rank").innerHTML = "Rank: Spec-Ops Sniper";
+    }
+    if (player.level >= 450 && player.level < 500){
+        document.getElementById("rifle").innerHTML = "Rifle: AWM";
+        document.getElementById("rank").innerHTML = "Rank: Spec-Ops Sharpshooter";
+    }
     if (player.level >= 500) {
-        document.getElementById("rifle").innerHTML = "Rifle: Barret .50 Call";
-        document.getElementById("rank").innerHTML = "Rank: Special Forces Sharpshooter";
+        document.getElementById("rifle").innerHTML = "Rifle: M98B";
+        document.getElementById("rank").innerHTML = "Rank: Deadshot";
     }
 }
 
@@ -135,12 +164,14 @@ function upgrade1() {
     if (player.coins < costupgr1) {
         alert("to buy this upgrade you need to have " + costupgr1 + " Dogtags");
     } else {
-        player.damage++;
+        player.damage = player.damage + player.extradamage;
         player.coins = player.coins - costupgr1;
+        player.extradamage = player.extradamage + 15;
         costupgr1 = costupgr1 * 2;
         document.getElementById("upgrade1").innerHTML = costupgr1 + " <img src='img/dog-tag.png' class='price'>";
         document.getElementById("coins").innerHTML = player.coins + "<img src='img/dog-tag.png' class='dogtag-currency'>";
         document.getElementById("damage").innerHTML = "Damage per shot: " + player.damage;
+        document.getElementById("upgrade1").innerHTML = "+ " + player.extradamage + " dmg<span class='break'>per shot</span><p class='stats upgrade1'>" + costupgr1 + "<img src='img/dog-tag.png' class='price'></p>";
         save();
     }
 }
@@ -267,6 +298,7 @@ function save() {
     localStorage.setItem("costupgr3", costupgr3);
     localStorage.setItem("costupgr4", costupgr4);
     localStorage.setItem("upgradelvls", upgradelvls);
+    localStorage.setItem("player.extradamage", player.extradamage);
 }
 function reset() {
     localStorage.clear();
