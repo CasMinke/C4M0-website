@@ -363,6 +363,9 @@ footer {
     border-radius: 25px;
     line-height: 5px;
 }
+.middle-button-game:hover{
+    color: #5a6300;
+}
 
 .middletop-button-game {
     position: absolute;
@@ -378,6 +381,16 @@ footer {
     padding: 5px 10px 5px 10px;
     border-radius: 25px;
     line-height: 5px;
+}
+.middletop-button-game:hover{
+    color: #5a6300;
+}
+.middletop-button-game:active {
+    background-color: #3b3b3b;
+}
+
+.middlerop-button-game:focus {
+    outline: none !important;
 }
 
 .middle-button-game:active {
@@ -400,6 +413,9 @@ footer {
     border-radius: 25px;
     line-height: 5px;
 }
+.left-button-game:hover{
+    color: #5a6300;
+}
 
 .left-button-game:active {
     background-color: #3b3b3b;
@@ -420,6 +436,9 @@ footer {
     padding: 5px 10px 5px 10px;
     border-radius: 25px;
     line-height: 5px;
+}
+.right-button-game:hover{
+    color: #5a6300;
 }
 
 .right-button-game:active {
@@ -445,6 +464,9 @@ footer {
     margin-left: auto;
     margin-right: auto;
 }
+.finish:hover{
+    color: #5a6300;
+}
 
 .finish:active {
     background-color: #3b3b3b;
@@ -466,6 +488,9 @@ footer {
     border-radius: 25px;
     line-height: 5px;
 }
+.lefttop-button-game:hover{
+    color: #5a6300;
+}
 
 .lefttop-button-game:active {
     background-color: #3b3b3b;
@@ -486,6 +511,9 @@ footer {
     padding: 5px 10px 5px 10px;
     border-radius: 25px;
     line-height: 5px;
+}
+.righttop-button-game:hover{
+    color: #5a6300;
 }
 
 .righttop-button-game:active {
