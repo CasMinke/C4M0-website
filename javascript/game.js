@@ -5,7 +5,51 @@ var costupgr1 = 5;
 var costupgr2 = 10;
 var costupgr3 = 15;
 var costupgr4 = 30;
+var upgradelvls = 5;
 
+if (localStorage.getItem("player.level") == null) {
+
+} else {
+    player.level = parseInt(localStorage.getItem("player.level"));
+    player.damage = parseInt(localStorage.getItem("player.damage"));
+    player.experience = parseInt(localStorage.getItem("player.experience"));
+    player.coins = parseInt(localStorage.getItem("player.coins"));
+    player.kills = parseInt(localStorage.getItem("player.kills"));
+    player.extracoins = parseInt(localStorage.getItem("player.extracoins"));
+    player.experienceneeded = parseInt(localStorage.getItem("player.experienceneeded"));
+    player.experienceperkill = parseInt(localStorage.getItem("player.experienceperkill"));
+    enemy.level = parseInt(localStorage.getItem("enemy.level"));
+    enemy.health = parseInt(localStorage.getItem("enemy.health"));
+    enemy.healthmax = parseInt(localStorage.getItem("enemy.healthmax"));
+    enemy.experience = parseInt(localStorage.getItem("enemy.experience"));
+    enemy.loot = parseInt(localStorage.getItem("enemy.loot"));
+    enemy.experienceneeded = parseInt(localStorage.getItem("enemy.experienceneeded"));
+    enemy.experienceperdeath = parseInt(localStorage.getItem("enemy.experienceperdeath"));
+    damageovertime = parseInt(localStorage.getItem("damageovertime"));
+    costupgr1 = parseInt(localStorage.getItem("costupgr1"));
+    costupgr2 = parseInt(localStorage.getItem("costupgr2"));
+    costupgr3 = parseInt(localStorage.getItem("costupgr3"));
+    costupgr4 = parseInt(localStorage.getItem("costupgr4"));
+    upgradelvls = parseInt(localStorage.getItem("upgradelvls"));
+}
+
+function refreshall() {
+    document.getElementById("enemyHealth").innerHTML = "Health: " + enemy.health + "/" + enemy.healthmax + "hp";
+    document.getElementById("coins").innerHTML = player.coins + "<img src='img/dog-tag.png' class='dogtag-currency'>";
+    document.getElementById("experience").innerHTML = "Experience: " + player.experience + "/" + player.experienceneeded + "xp";
+    document.getElementById("kills").innerHTML = "Confirmed kills: " + player.kills;
+    document.getElementById("deaths").innerHTML = "Deaths: " + player.kills;
+    document.getElementById("enemylevel").innerHTML = "Enemylevel: " + enemy.level;
+    document.getElementById("reward").innerHTML = "Reward: " + player.experienceperkill + "xp";
+    document.getElementById("playerlevel").innerHTML = "Playerlevel: " + player.level;
+    document.getElementById("damage").innerHTML = "Damage per shot: " + player.damage;
+    document.getElementById("upgrade1").innerHTML = costupgr1 + " <img src='img/dog-tag.png' class='price'>";
+    document.getElementById("upgrade2").innerHTML = costupgr2 + " <img src='img/dog-tag.png' class='price'>";
+    document.getElementById("damageovertime").innerHTML = "Bleed damage: " + damageovertime + " dmg/sec";
+    document.getElementById("upgrade3").innerHTML = costupgr3 + " <img src='img/dog-tag.png' class='price'>";
+    document.getElementById("loot").innerHTML = "Loot: " + enemy.loot + "<img src='img/dog-tag.png' class='dogtag-loot'>";
+    document.getElementById("upgrade4").innerHTML = upgradelvls + " lvl ups <p class='stats upgrade4'>" + costupgr4 + " <img src='img/dog-tag.png' class='price'></p>";
+}
 
 function attack() {
     enemy.health = enemy.health - player.damage;
@@ -48,8 +92,7 @@ function death() {
         player.experienceperkill = player.experienceperkill + 1;
         enemy.experienceperdeath = enemy.experienceperdeath + 1;
         document.getElementById("enemylevel").innerHTML = "Enemylevel: " + enemy.level;
-        document.getElementById("reward").innerHTML = "Reward: " + player.experienceperkill + "xp"
-
+        document.getElementById("reward").innerHTML = "Reward: " + player.experienceperkill + "xp";
     }
 
     function level() {
@@ -60,27 +103,30 @@ function death() {
         document.getElementById("playerlevel").innerHTML = "Playerlevel: " + player.level;
         document.getElementById("experience").innerHTML = "Experience: " + player.experience + "/" + player.experienceneeded + "xp";
         document.getElementById("damage").innerHTML = "Damage per shot: " + player.damage;
-
-        if (player.level === 20) {
-            document.getElementById("rifle").innerHTML = "Rifle: S.V.D";
-            document.getElementById("rank").innerHTML = "Rank: Ranger";
-        }
-        if (player.level === 50) {
-            document.getElementById("rifle").innerHTML = "Rifle: Scar-H";
-            document.getElementById("rank").innerHTML = "Rank: Marksman";
-        }
-        if (player.level === 100) {
-            document.getElementById("rifle").innerHTML = "Rifle: M40A5";
-            document.getElementById("rank").innerHTML = "Rank: Sniper";
-        }
-        if (player.level === 250) {
-            document.getElementById("rifle").innerHTML = "Rifle: A.W.M";
-            document.getElementById("rank").innerHTML = "Rank: Sharpshooter";
-        }
-        if (player.level === 500) {
-            document.getElementById("rifle").innerHTML = "Rifle: Barret .50 Call";
-            document.getElementById("rank").innerHTML = "Rank: Special Forces Sharpshooter";
-        }
+        checklvl();
+    }
+    save();
+}
+function checklvl() {
+    if (player.level === 20) {
+        document.getElementById("rifle").innerHTML = "Rifle: S.V.D";
+        document.getElementById("rank").innerHTML = "Rank: Ranger";
+    }
+    if (player.level === 50) {
+        document.getElementById("rifle").innerHTML = "Rifle: Scar-H";
+        document.getElementById("rank").innerHTML = "Rank: Marksman";
+    }
+    if (player.level === 100) {
+        document.getElementById("rifle").innerHTML = "Rifle: M40A5";
+        document.getElementById("rank").innerHTML = "Rank: Sniper";
+    }
+    if (player.level === 250) {
+        document.getElementById("rifle").innerHTML = "Rifle: A.W.M";
+        document.getElementById("rank").innerHTML = "Rank: Sharpshooter";
+    }
+    if (player.level === 500) {
+        document.getElementById("rifle").innerHTML = "Rifle: Barret .50 Call";
+        document.getElementById("rank").innerHTML = "Rank: Special Forces Sharpshooter";
     }
 }
 
@@ -121,7 +167,7 @@ function upgrade3() {
         costupgr3 = costupgr3 * 2;
         document.getElementById("upgrade3").innerHTML = costupgr3 + " <img src='img/dog-tag.png' class='price'>";
         document.getElementById("coins").innerHTML = player.coins + "<img src='img/dog-tag.png' class='dogtag-currency'>";
-        document.getElementById("loot").innerHTML = "Loot: " + enemy.loot + "<img src='img/dog-tag.png' class='dogtag-loot'>"
+        document.getElementById("loot").innerHTML = "Loot: " + enemy.loot + "<img src='img/dog-tag.png' class='dogtag-loot'>";
     }
 }
 
@@ -129,11 +175,12 @@ function upgrade4() {
     if (player.coins < costupgr4) {
         alert("to buy this upgrade you need to have " + costupgr4 + " Dogtags");
     } else {
-        player.level = player.level + 5;
-        player.damage = player.damage + 5;
+        player.level = player.level + upgradelvls;
+        player.damage = player.damage + upgradelvls;
         player.coins = player.coins - costupgr4;
         costupgr4 = costupgr4 * 2;
-        document.getElementById("upgrade4").innerHTML = costupgr4 + " <img src='img/dog-tag.png' class='price'>";
+        upgradelvls = upgradelvls + 5;
+        document.getElementById("upgrade4").innerHTML = upgradelvls + " lvl ups <p class='stats upgrade4'>" + costupgr4 + " <img src='img/dog-tag.png' class='price'></p>";
         document.getElementById("coins").innerHTML = player.coins + "<img src='img/dog-tag.png' class='dogtag-currency'>";
         document.getElementById("playerlevel").innerHTML = "Playerlevel: " + player.level;
         document.getElementById("damage").innerHTML = "Damage per shot: " + player.damage;
@@ -186,4 +233,36 @@ function finish() {
 
 if (window.innerHeight > window.innerWidth) {
     alert("TIP: this game works best in landscape mode");
+}
+
+function submitheighscore() {
+    highscore.value = player.kills;
+}
+
+function save() {
+    localStorage.setItem("player.level", player.level);
+    localStorage.setItem("player.damage", player.damage);
+    localStorage.setItem("player.experience", player.experience);
+    localStorage.setItem("player.coins", player.coins);
+    localStorage.setItem("player.kills", player.kills);
+    localStorage.setItem("player.extracoins", player.extracoins);
+    localStorage.setItem("player.experienceneeded", player.experienceneeded);
+    localStorage.setItem("player.experienceperkill", player.experienceperkill);
+    localStorage.setItem("enemy.level", enemy.level);
+    localStorage.setItem("enemy.health", enemy.health);
+    localStorage.setItem("enemy.healthmax", enemy.healthmax);
+    localStorage.setItem("enemy.experience", enemy.experience);
+    localStorage.setItem("enemy.loot", enemy.loot);
+    localStorage.setItem("enemy.experienceneeded", enemy.experienceneeded);
+    localStorage.setItem("enemy.experienceperdeath", enemy.experienceperdeath);
+    localStorage.setItem("damageovertime", damageovertime);
+    localStorage.setItem("costupgr1", costupgr1);
+    localStorage.setItem("costupgr2", costupgr2);
+    localStorage.setItem("costupgr3", costupgr3);
+    localStorage.setItem("costupgr4", costupgr4);
+    localStorage.setItem("upgradelvls", upgradelvls);
+}
+function reset() {
+    localStorage.clear();
+    location.reload();
 }

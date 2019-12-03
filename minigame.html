@@ -16,7 +16,7 @@
             crossorigin="anonymous"></script>
     <link href="css/style.css" rel="stylesheet">
 </head>
-<body>
+<body onload="refreshall(); checklvl();">
 <script src="javascript/game.js" rel="script"></script>
 <header>
     <nav class="navbar navbar-expand-lg nopadding">
@@ -56,7 +56,7 @@
         </div>
     </nav>
 </header>
-<div class="padding-for-header-game padding-for-footer">
+<div class="padding-for-header-game">
     <div class="body-game">
         <div class="container-fluid nopadding">
             <div class="game-background">
@@ -91,8 +91,9 @@
             <p class="stats upgrade2" id="upgrade2">10 <img src="img/dog-tag.png" class="price"></p></button>
         <button class="lefttop-button-game" onclick="upgrade3()">more loot
             <p class="stats upgrade3" id="upgrade3">15 <img src="img/dog-tag.png" class="price"></p></button>
-        <button class="righttop-button-game" onclick="upgrade4()">5 lvl ups
-            <p class="stats upgrade4" id="upgrade4">30 <img src="img/dog-tag.png" class="price"></p></button>
+        <button class="righttop-button-game" onclick="upgrade4()" id="upgrade4">5 lvl ups
+            <p class="stats upgrade4">30 <img src="img/dog-tag.png" class="price"></p></button>
+        <button class="middletop-button-game" onclick="reset()">reset<span class="break">progress</span></button>
         <div class="currency">
             <p class="stats" id="coins">0 <img src="img/dog-tag.png" class="dogtag-currency"></p>
         </div>
@@ -100,6 +101,13 @@
                 class="break">playerlevel 500 to unlock</span></button>
     </div>
 </div>
+<form class="contact-form custom-padding-game-form" method="post" name="gameform" action="php/game-form.php">
+    <input type="hidden" name="highscore" id="highscore" placeholder="highscore" value="" class="input-form">
+    <input type="text" name="nickname" placeholder="nickname" class="input-form">
+    <input type="submit" value="save highscore" class="submit-btn" onclick="submitheighscore()">
+</form>
+<div class='container-fluid padding-for-footer'><a href='php/game-leaderboard.php' class='backhome-btn white-link'>go to
+    leaderboard</a></div>
 <footer>
     <p class="footer-text text-p"><span class="break">CONTACT INFO</span><span
             class="break">mail: c4m0.group@gmail.com</span> facebook: <a

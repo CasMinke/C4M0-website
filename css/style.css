@@ -364,6 +364,22 @@ footer {
     line-height: 5px;
 }
 
+.middletop-button-game {
+    position: absolute;
+    top: 30%;
+    margin-left: auto;
+    margin-right: auto;
+    right: 0;
+    left: 0;
+    color: #ffffff;
+    font-size: 7px;
+    background-color: #4b4b4b;
+    border: none;
+    padding: 5px 10px 5px 10px;
+    border-radius: 25px;
+    line-height: 5px;
+}
+
 .middle-button-game:active {
     background-color: #3b3b3b;
 }
@@ -556,6 +572,10 @@ footer {
     background-color: #4b4b4b;
 }
 
+.custom-padding-game-form {
+    padding-bottom: 20px;
+}
+
 ::placeholder {
     opacity: 1;
 }
@@ -683,6 +703,11 @@ footer {
         line-height: 15px;
     }
 
+    .middletop-button-game {
+        font-size: 15px;
+        line-height: 15px;
+    }
+
     .right-button-game {
         font-size: 15px;
         line-height: 15px;
@@ -718,6 +743,10 @@ footer {
 
     .label-delete {
         font-size: 18px;
+    }
+
+    .custom-padding-game-form {
+        padding-top: 60px;
     }
 }
 
@@ -873,6 +902,11 @@ footer {
         line-height: 22px;
     }
 
+    .middletop-button-game {
+        font-size: 22px;
+        line-height: 22px;
+    }
+
     .right-button-game {
         font-size: 22px;
         line-height: 22px;
@@ -925,13 +959,18 @@ footer {
     .label-delete {
         font-size: 15px;
     }
+
+    .custom-padding-game-form {
+        padding-bottom: 50px;
+    }
 }
 
 @media (min-width: 992px) and (max-width: 1300px) {
     .nav-link {
         font-size: 15px;
     }
-    .label-delete{
+
+    .label-delete {
         font-size: 10px;
     }
 }
@@ -956,6 +995,11 @@ footer {
     }
 
     .middle-button-game {
+        font-size: 10px;
+        line-height: 10px;
+    }
+
+    .middletop-button-game {
         font-size: 10px;
         line-height: 10px;
     }
@@ -1007,6 +1051,10 @@ footer {
     }
 
     .middle-button-game {
+        font-size: 5px;
+    }
+
+    .middletop-button-game {
         font-size: 5px;
     }
 
