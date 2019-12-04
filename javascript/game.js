@@ -1,12 +1,14 @@
-var player = {level: 1, damage: 10, experience: 0, coins: 0, kills: 0, extracoins: 0, experienceneeded: 100, experienceperkill: 25, extradamage: 5};
-var enemy = {level: 1, health: 100, healthmax: 100, experience: 0, loot: 1, experienceneeded: 100, experienceperdeath: 25};
+var player = {level: 1, damage: 10, experience: 0, coins: 0, kills: 0, experienceneeded: 100, experienceperkill: 25, extradamage: 5};
+var enemy = {level: 1, health: 100, healthmax: 100, experience: 0, loot: 1, experienceneeded: 100, experienceperdeath: 25, extraloot: 1};
 var damageovertime = 0;
+var extradamageovertime = 5;
 var costupgr1 = 5;
 var costupgr2 = 10;
 var costupgr3 = 15;
 var costupgr4 = 30;
 var upgradelvls = 5;
 var timer = setInterval(upgradeuitvoer, 1000);
+var buttonpressed = false;
 
 if (localStorage.getItem("player.level") == null) {
 
@@ -16,7 +18,6 @@ if (localStorage.getItem("player.level") == null) {
     player.experience = parseInt(localStorage.getItem("player.experience"));
     player.coins = parseInt(localStorage.getItem("player.coins"));
     player.kills = parseInt(localStorage.getItem("player.kills"));
-    player.extracoins = parseInt(localStorage.getItem("player.extracoins"));
     player.experienceneeded = parseInt(localStorage.getItem("player.experienceneeded"));
     player.experienceperkill = parseInt(localStorage.getItem("player.experienceperkill"));
     enemy.level = parseInt(localStorage.getItem("enemy.level"));
@@ -33,6 +34,9 @@ if (localStorage.getItem("player.level") == null) {
     costupgr4 = parseInt(localStorage.getItem("costupgr4"));
     upgradelvls = parseInt(localStorage.getItem("upgradelvls"));
     player.extradamage = parseInt(localStorage.getItem("player.extradamage"));
+    extradamageovertime = parseInt(localStorage.getItem("extradamageovertime"));
+    buttonpressed = localStorage.getItem("buttonpressed");
+    enemy.extraloot = parseInt(localStorage.getItem("enemy.extraloot"));
 }
 
 function refreshall() {
@@ -46,11 +50,11 @@ function refreshall() {
     document.getElementById("playerlevel").innerHTML = "Playerlevel: " + player.level;
     document.getElementById("damage").innerHTML = "Damage per shot: " + player.damage;
     document.getElementById("upgrade1").innerHTML = "+ " + player.extradamage + " dmg<span class='break'>per shot</span><p class='stats upgrade1'>" + costupgr1 + "<img src='img/dog-tag.png' class='price'></p>";
-    document.getElementById("upgrade2").innerHTML = costupgr2 + " <img src='img/dog-tag.png' class='price'>";
+    document.getElementById("upgrade2").innerHTML = "+ " + extradamageovertime + " bleed<span class='break'>damage</span> <p class='stats upgrade2'>" + costupgr2 + " <img src='img/dog-tag.png' class='price'></p>";
     document.getElementById("damageovertime").innerHTML = "Bleed damage: " + damageovertime + " dmg/sec";
-    document.getElementById("upgrade3").innerHTML = costupgr3 + " <img src='img/dog-tag.png' class='price'>";
+    document.getElementById("upgrade3").innerHTML = "+ " + enemy.extraloot + " loot <p class='stats upgrade3'>" + costupgr3 + " <img src='img/dog-tag.png' class='price'></p>";
     document.getElementById("loot").innerHTML = "Loot: " + enemy.loot + "<img src='img/dog-tag.png' class='dogtag-loot'>";
-    document.getElementById("upgrade4").innerHTML = upgradelvls + " lvl ups <p class='stats upgrade4'>" + costupgr4 + " <img src='img/dog-tag.png' class='price'></p>";
+    document.getElementById("upgrade4").innerHTML = "+ " + upgradelvls + " lvls <p class='stats upgrade4'>" + costupgr4 + " <img src='img/dog-tag.png' class='price'></p>";
 }
 
 function attack() {
@@ -67,7 +71,7 @@ function death() {
     player.experience = player.experience + player.experienceperkill;
     enemy.experience = enemy.experience + enemy.experienceperdeath;
     enemy.health = enemy.healthmax;
-    player.coins = player.coins + 1 + player.extracoins;
+    player.coins = player.coins + enemy.loot;
     player.kills++;
     console.log("Enemy died!");
     document.getElementById("coins").innerHTML = player.coins + "<img src='img/dog-tag.png' class='dogtag-currency'>";
@@ -168,11 +172,14 @@ function upgrade1() {
         player.coins = player.coins - costupgr1;
         player.extradamage = player.extradamage + 15;
         costupgr1 = costupgr1 * 2;
-        document.getElementById("upgrade1").innerHTML = costupgr1 + " <img src='img/dog-tag.png' class='price'>";
         document.getElementById("coins").innerHTML = player.coins + "<img src='img/dog-tag.png' class='dogtag-currency'>";
         document.getElementById("damage").innerHTML = "Damage per shot: " + player.damage;
         document.getElementById("upgrade1").innerHTML = "+ " + player.extradamage + " dmg<span class='break'>per shot</span><p class='stats upgrade1'>" + costupgr1 + "<img src='img/dog-tag.png' class='price'></p>";
         save();
+        if (costupgr1 > 999999999){
+            costupgr1 = 999999999;
+            document.getElementById("upgrade1").innerHTML = "+ " + player.extradamage + " dmg<span class='break'>per shot</span><p class='stats upgrade1'>" + costupgr1 + "<img src='img/dog-tag.png' class='price'></p>";
+        }
     }
 }
 
@@ -183,10 +190,15 @@ function upgrade2() {
         player.coins = player.coins - costupgr2;
         document.getElementById("coins").innerHTML = player.coins + "<img src='img/dog-tag.png' class='dogtag-currency'>";
         costupgr2 = costupgr2 * 2;
-        damageovertime++;
-        document.getElementById("upgrade2").innerHTML = costupgr2 + " <img src='img/dog-tag.png' class='price'>";
+        damageovertime = damageovertime + extradamageovertime;
+        extradamageovertime = extradamageovertime + 5;
+        document.getElementById("upgrade2").innerHTML = "+ " + extradamageovertime + " bleed<span class='break'>damage</span> <p class='stats upgrade2'>" + costupgr2 + " <img src='img/dog-tag.png' class='price'></p>";
         document.getElementById("damageovertime").innerHTML = "Bleed damage: " + damageovertime + " dmg/sec";
         save();
+        if (costupgr2 > 999999999){
+            costupgr2 = 999999999;
+            document.getElementById("upgrade2").innerHTML = "+ " + extradamageovertime + " bleed<span class='break'>damage</span> <p class='stats upgrade2'>" + costupgr2 + " <img src='img/dog-tag.png' class='price'></p>";
+        }
     }
 }
 
@@ -194,14 +206,18 @@ function upgrade3() {
     if (player.coins < costupgr3) {
         alert("to buy this upgrade you need to have " + costupgr3 + " Dogtags");
     } else {
-        player.extracoins++;
-        enemy.loot++;
+        enemy.loot = enemy.loot + enemy.extraloot;
         player.coins = player.coins - costupgr3;
         costupgr3 = costupgr3 * 2;
-        document.getElementById("upgrade3").innerHTML = costupgr3 + " <img src='img/dog-tag.png' class='price'>";
+        enemy.extraloot = enemy.extraloot + 1;
+        document.getElementById("upgrade3").innerHTML = "+ " + enemy.extraloot + " loot <p class='stats upgrade3'>" + costupgr3 + " <img src='img/dog-tag.png' class='price'></p>";
         document.getElementById("coins").innerHTML = player.coins + "<img src='img/dog-tag.png' class='dogtag-currency'>";
         document.getElementById("loot").innerHTML = "Loot: " + enemy.loot + "<img src='img/dog-tag.png' class='dogtag-loot'>";
         save();
+        if (costupgr3 > 999999999){
+            costupgr3 = 999999999;
+            document.getElementById("upgrade3").innerHTML = "+ " + enemy.extraloot + " loot <p class='stats upgrade3'>" + costupgr3 + " <img src='img/dog-tag.png' class='price'></p>";
+        }
     }
 }
 
@@ -214,12 +230,16 @@ function upgrade4() {
         player.coins = player.coins - costupgr4;
         costupgr4 = costupgr4 * 2;
         upgradelvls = upgradelvls + 5;
-        document.getElementById("upgrade4").innerHTML = upgradelvls + " lvl ups <p class='stats upgrade4'>" + costupgr4 + " <img src='img/dog-tag.png' class='price'></p>";
+        document.getElementById("upgrade4").innerHTML = "+ " + upgradelvls + " lvls <p class='stats upgrade4'>" + costupgr4 + " <img src='img/dog-tag.png' class='price'></p>";
         document.getElementById("coins").innerHTML = player.coins + "<img src='img/dog-tag.png' class='dogtag-currency'>";
         document.getElementById("playerlevel").innerHTML = "Playerlevel: " + player.level;
         document.getElementById("damage").innerHTML = "Damage per shot: " + player.damage;
         checklvl();
         save();
+        if (costupgr4 > 999999999){
+            costupgr4 = 999999999;
+            document.getElementById("upgrade4").innerHTML = upgradelvls + " lvl ups <p class='stats upgrade4'>" + costupgr4 + " <img src='img/dog-tag.png' class='price'></p>";
+        }
     }
 }
 
@@ -260,9 +280,14 @@ function normalsniper() {
 
 function finish() {
     if (player.level >= 500) {
-        player.coins = 999999999;
-        document.getElementById("coins").innerHTML = player.coins + "<img src='img/dog-tag.png' class='dogtag-currency'>";
-        alert("have fun with 999999999 dogtags");
+        if (buttonpressed === false) {
+            player.coins = 999999999;
+            document.getElementById("coins").innerHTML = player.coins + "<img src='img/dog-tag.png' class='dogtag-currency'>";
+            alert("have fun with 999999999 dogtags");
+            buttonpressed = true;
+        }else {
+            alert("you can only use this button once");
+        }
     } else {
         alert("you need to be level 500 or higher to unlock the easter egg");
     }
@@ -282,7 +307,6 @@ function save() {
     localStorage.setItem("player.experience", player.experience);
     localStorage.setItem("player.coins", player.coins);
     localStorage.setItem("player.kills", player.kills);
-    localStorage.setItem("player.extracoins", player.extracoins);
     localStorage.setItem("player.experienceneeded", player.experienceneeded);
     localStorage.setItem("player.experienceperkill", player.experienceperkill);
     localStorage.setItem("enemy.level", enemy.level);
@@ -299,6 +323,9 @@ function save() {
     localStorage.setItem("costupgr4", costupgr4);
     localStorage.setItem("upgradelvls", upgradelvls);
     localStorage.setItem("player.extradamage", player.extradamage);
+    localStorage.setItem("extradamageovertime", extradamageovertime);
+    localStorage.setItem("buttonpressed", buttonpressed);
+    localStorage.setItem("enemy.extraloot", enemy.extraloot);
 }
 function reset() {
     localStorage.clear();
