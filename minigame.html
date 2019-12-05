@@ -60,6 +60,7 @@
     <div class="body-game">
         <div class="container-fluid nopadding">
             <div class="game-background">
+                <!-- all background pictures are from https://pixabay.com/nl/ and are under the pixabay licence https://pixabay.com/nl/service/license/ -->
                 <img src="img/background.png" class="background-img" id="background">
             </div>
             <div class="enemy-stats">
@@ -68,7 +69,7 @@
                 <p class="stats" id="enemylevel">Enemylevel: 1</p>
                 <p class="stats" id="damageovertime">Bleed damage: 0 dmg/sec</p>
                 <p class="stats" id="deaths">Deaths: 0</p>
-                <p class="stats" id="loot">Loot: 1<img src="img/dog-tag.png" class="dogtag-loot"></p>
+                <p class="stats" id="loot">Loot: 1<img src="img/dog-tag.png" class="dogtag-loot"></p><!-- dog tag image is from https://www.pngguru.com/free-transparent-background-png-clipart-jbcqz and the license is displayed under the image i have added a color to the dogtags-->
                 <p class="stats" id="reward">Reward: 25xp</p>
             </div>
             <img src="img/c4m0-logo-original.png" class="logo-game">
@@ -82,20 +83,23 @@
                 <p class="stats" id="kills">Confirmed kills: 0</p>
             </div>
             <img src="img/Sniper.png" class="sniper" id="sniper">
+            <!-- the sniper image is from http://pngimg.com/download/60816 the license is https://creativecommons.org/licenses/by-nc/4.0/ and i modified it by making the clothing green -->
             <img src="img/soldier.png" class="soldier" id="soldier">
+            <!-- the soldier image is from https://www.pngguru.com/free-transparent-background-png-clipart-cngqa the license is displayed under the image. -->
+            <!-- the gravestone image is from https://pixabay.com/nl/vectors/grafteken-begraafplaats-graf-312540/ the license is https://pixabay.com/nl/service/license/ and i modified it by adding a rifle and helmet to it-->
         </div>
         <button class="left-button-game" onclick="upgrade1()" id="upgrade1">+ 5 dmg<span class="break">per shot</span>
-            <p class="stats upgrade1">5 <img src="img/dog-tag.png" class="price"></p></button>
+            <p class="stats upgrade1">5 <img src="img/dog-tag.png" class="price"></p></button><!-- dog tag image is from https://www.pngguru.com/free-transparent-background-png-clipart-jbcqz and the license is displayed under the image i have added a color to the dogtags-->
         <button class="middle-button-game" onclick="attack()">pull the<span class="break">trigger</span></button>
         <button class="right-button-game" onclick="upgrade2()" id="upgrade2">+ 5 bleed<span class="break">damage</span>
-            <p class="stats upgrade2">10 <img src="img/dog-tag.png" class="price"></p></button>
+            <p class="stats upgrade2">10 <img src="img/dog-tag.png" class="price"></p></button><!-- dog tag image is from https://www.pngguru.com/free-transparent-background-png-clipart-jbcqz and the license is displayed under the image i have added a color to the dogtags-->
         <button class="lefttop-button-game" onclick="upgrade3()" id="upgrade3">+ 1 loot
-            <p class="stats upgrade3">15 <img src="img/dog-tag.png" class="price"></p></button>
+            <p class="stats upgrade3">15 <img src="img/dog-tag.png" class="price"></p></button><!-- dog tag image is from https://www.pngguru.com/free-transparent-background-png-clipart-jbcqz and the license is displayed under the image i have added a color to the dogtags-->
         <button class="righttop-button-game" onclick="upgrade4()" id="upgrade4">+ 5 lvls
-            <p class="stats upgrade4">30 <img src="img/dog-tag.png" class="price"></p></button>
+            <p class="stats upgrade4">30 <img src="img/dog-tag.png" class="price"></p></button><!-- dog tag image is from https://www.pngguru.com/free-transparent-background-png-clipart-jbcqz and the license is displayed under the image i have added a color to the dogtags-->
         <button class="middletop-button-game" onclick="reset()">reset<span class="break">progress</span></button>
         <div class="currency">
-            <p class="stats" id="coins">0 <img src="img/dog-tag.png" class="dogtag-currency"></p>
+            <p class="stats" id="coins">0 <img src="img/dog-tag.png" class="dogtag-currency"></p><!-- dog tag image is from https://www.pngguru.com/free-transparent-background-png-clipart-jbcqz and the license is displayed under the image i have added a color to the dogtags-->
         </div>
         <button class="finish" onclick="finish()" id="finish">easter egg reach <span
                 class="break">playerlevel 500 to unlock</span></button>
