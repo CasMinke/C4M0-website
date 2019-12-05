@@ -1,5 +1,5 @@
 var player = {level: 1, damage: 10, experience: 0, coins: 0, kills: 0, experienceneeded: 100, experienceperkill: 25, extradamage: 5};
-var enemy = {level: 1, health: 100, healthmax: 100, experience: 0, loot: 1, experienceneeded: 100, experienceperdeath: 25, extraloot: 2};
+var enemy = {level: 1, health: 100, healthmax: 100, experience: 0, loot: 1, experienceneeded: 100, experienceperdeath: 25, extraloot: 1};
 var damageovertime = 0;
 var extradamageovertime = 5;
 var costupgr1 = 5;
@@ -8,7 +8,7 @@ var costupgr3 = 15;
 var costupgr4 = 30;
 var upgradelvls = 5;
 var timer = setInterval(upgradeuitvoer, 1000);
-var buttonpressed = false;
+var buttonpressed = 0;
 
 if (localStorage.getItem("player.level") == null) {
 
@@ -35,7 +35,7 @@ if (localStorage.getItem("player.level") == null) {
     upgradelvls = parseInt(localStorage.getItem("upgradelvls"));
     player.extradamage = parseInt(localStorage.getItem("player.extradamage"));
     extradamageovertime = parseInt(localStorage.getItem("extradamageovertime"));
-    buttonpressed = localStorage.getItem("buttonpressed");
+    buttonpressed = parseInt(localStorage.getItem("buttonpressed"));
     enemy.extraloot = parseInt(localStorage.getItem("enemy.extraloot"));
 }
 
@@ -114,6 +114,7 @@ function death() {
         checklvl();
     }
 }
+
 function checklvl() {
     if (player.level >= 25 && player.level < 50) {
         document.getElementById("rifle").innerHTML = "Rifle: Type-88";
@@ -125,7 +126,7 @@ function checklvl() {
         document.getElementById("rank").innerHTML = "Rank: Marksman Elite";
         background.src = "img/background2.png";
     }
-    if (player.level >= 75 && player.level < 100){
+    if (player.level >= 75 && player.level < 100) {
         document.getElementById("rifle").innerHTML = "Rifle: M39";
         document.getElementById("rank").innerHTML = "Rank: Marksman Sergeant";
         background.src = "img/background2.png";
@@ -135,12 +136,12 @@ function checklvl() {
         document.getElementById("rank").innerHTML = "Rank: Sniper";
         background.src = "img/background3.png";
     }
-    if (player.level >= 150 && player.level < 200){
+    if (player.level >= 150 && player.level < 200) {
         document.getElementById("rifle").innerHTML = "Rifle: SPG1";
         document.getElementById("rank").innerHTML = "Rank: Sniper Elite";
         background.src = "img/background3.png";
     }
-    if (player.level >= 200 && player.level < 250){
+    if (player.level >= 200 && player.level < 250) {
         document.getElementById("rifle").innerHTML = "Rifle: RSASS";
         document.getElementById("rank").innerHTML = "Rank: Sniper Sergeant";
         background.src = "img/background3.png";
@@ -150,22 +151,22 @@ function checklvl() {
         document.getElementById("rank").innerHTML = "Rank: Sharpshooter";
         background.src = "img/background4.png";
     }
-    if (player.level >= 300 && player.level < 350){
+    if (player.level >= 300 && player.level < 350) {
         document.getElementById("rifle").innerHTML = "Rifle: M110";
         document.getElementById("rank").innerHTML = "Rank: Sharpshooter Elite";
         background.src = "img/background4.png";
     }
-    if (player.level >= 350 && player.level < 400){
+    if (player.level >= 350 && player.level < 400) {
         document.getElementById("rifle").innerHTML = "Rifle: M2010";
         document.getElementById("rank").innerHTML = "Rank: Sharpshooter Sergeant";
         background.src = "img/background4.png";
     }
-    if (player.level >= 400 && player.level < 450){
+    if (player.level >= 400 && player.level < 450) {
         document.getElementById("rifle").innerHTML = "Rifle: Gol";
         document.getElementById("rank").innerHTML = "Rank: Spec-Ops Sniper";
         background.src = "img/background5.png";
     }
-    if (player.level >= 450 && player.level < 500){
+    if (player.level >= 450 && player.level < 500) {
         document.getElementById("rifle").innerHTML = "Rifle: AWM";
         document.getElementById("rank").innerHTML = "Rank: Spec-Ops Sharpshooter";
         background.src = "img/background5.png";
@@ -189,7 +190,7 @@ function upgrade1() {
         document.getElementById("damage").innerHTML = "Damage per shot: " + player.damage;
         document.getElementById("upgrade1").innerHTML = "+ " + player.extradamage + " dmg<span class='break'>per shot</span><p class='stats upgrade1'>" + costupgr1 + "<img src='img/dog-tag.png' class='price'></p>";
         save();
-        if (costupgr1 > 999999999){
+        if (costupgr1 > 999999999) {
             costupgr1 = 999999999;
             document.getElementById("upgrade1").innerHTML = "+ " + player.extradamage + " dmg<span class='break'>per shot</span><p class='stats upgrade1'>" + costupgr1 + "<img src='img/dog-tag.png' class='price'></p>";
         }
@@ -208,7 +209,7 @@ function upgrade2() {
         document.getElementById("upgrade2").innerHTML = "+ " + extradamageovertime + " bleed<span class='break'>damage</span> <p class='stats upgrade2'>" + costupgr2 + " <img src='img/dog-tag.png' class='price'></p>";
         document.getElementById("damageovertime").innerHTML = "Bleed damage: " + damageovertime + " dmg/sec";
         save();
-        if (costupgr2 > 999999999){
+        if (costupgr2 > 999999999) {
             costupgr2 = 999999999;
             document.getElementById("upgrade2").innerHTML = "+ " + extradamageovertime + " bleed<span class='break'>damage</span> <p class='stats upgrade2'>" + costupgr2 + " <img src='img/dog-tag.png' class='price'></p>";
         }
@@ -222,12 +223,12 @@ function upgrade3() {
         enemy.loot = enemy.loot + enemy.extraloot;
         player.coins = player.coins - costupgr3;
         costupgr3 = costupgr3 * 2;
-        enemy.extraloot = enemy.extraloot + 1;
+        enemy.extraloot = enemy.extraloot * 2;
         document.getElementById("upgrade3").innerHTML = "+ " + enemy.extraloot + " loot <p class='stats upgrade3'>" + costupgr3 + " <img src='img/dog-tag.png' class='price'></p>";
         document.getElementById("coins").innerHTML = player.coins + "<img src='img/dog-tag.png' class='dogtag-currency'>";
         document.getElementById("loot").innerHTML = "Loot: " + enemy.loot + "<img src='img/dog-tag.png' class='dogtag-loot'>";
         save();
-        if (costupgr3 > 999999999){
+        if (costupgr3 > 999999999) {
             costupgr3 = 999999999;
             document.getElementById("upgrade3").innerHTML = "+ " + enemy.extraloot + " loot <p class='stats upgrade3'>" + costupgr3 + " <img src='img/dog-tag.png' class='price'></p>";
         }
@@ -249,7 +250,7 @@ function upgrade4() {
         document.getElementById("damage").innerHTML = "Damage per shot: " + player.damage;
         checklvl();
         save();
-        if (costupgr4 > 999999999){
+        if (costupgr4 > 999999999) {
             costupgr4 = 999999999;
             document.getElementById("upgrade4").innerHTML = upgradelvls + " lvl ups <p class='stats upgrade4'>" + costupgr4 + " <img src='img/dog-tag.png' class='price'></p>";
         }
@@ -292,32 +293,36 @@ function normalsoldier() {
 function normalsniper() {
     sniper.src = "img/sniper.png"
 }
+
 function shotsoldier() {
     soldier.src = "img/soldiershot.png";
 }
+
 function attackenable() {
     attackbtn.disabled = false;
 }
+
 function attackenableonattack() {
-    if (enemy.health > 0){
+    if (enemy.health > 0) {
         attackbtn.disabled = true, setTimeout(attackenable, 100);
     }
 }
 
 function finish() {
     if (player.level >= 500) {
-        if (buttonpressed === false) {
+        if (buttonpressed === 1) {
+            alert("you can only use this button once");
+        } else {
             player.coins = 999999999;
             document.getElementById("coins").innerHTML = player.coins + "<img src='img/dog-tag.png' class='dogtag-currency'>";
             alert("have fun with 999999999 dogtags");
-            buttonpressed = true;
-        }else {
-            alert("you can only use this button once");
+            buttonpressed = 1;
         }
     } else {
         alert("you need to be level 500 or higher to unlock the easter egg");
     }
 }
+
 
 if (window.innerHeight > window.innerWidth) {
     alert("TIP: this game works best in landscape mode");
@@ -353,7 +358,8 @@ function save() {
     localStorage.setItem("buttonpressed", buttonpressed);
     localStorage.setItem("enemy.extraloot", enemy.extraloot);
 }
+
 function reset() {
-    localStorage.clear();
-    location.reload();
+        localStorage.clear();
+        location.reload();
 }
