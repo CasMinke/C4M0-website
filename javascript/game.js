@@ -269,16 +269,18 @@ function animatie() {
     if (enemy.health > 0) {
         soldier.src = "img/soldier2.png";
         sniper.src = "img/sniper2.png";
-        setTimeout(normalsoldier, 100);
+        setTimeout(shotsoldier, 100);
         setTimeout(normalsniper, 100);
-        clearTimeout(normalsoldier);
+        clearTimeout(shotsoldier);
         clearTimeout(normalsniper);
 
     } else {
+        attackbtn.disabled = true, setTimeout(attackenable, 1000);
         soldier.src = "img/soldierdied.png", setTimeout(normalsoldier, 1000);
         sniper.src = "img/sniper2.png", setTimeout(normalsniper, 100);
         clearTimeout(normalsoldier);
         clearTimeout(normalsniper);
+        clearTimeout(attackenable);
     }
 }
 
@@ -288,6 +290,12 @@ function normalsoldier() {
 
 function normalsniper() {
     sniper.src = "img/sniper.png"
+}
+function shotsoldier() {
+    soldier.src = "img/soldiershot.png";
+}
+function attackenable() {
+    attackbtn.disabled = false;
 }
 
 function finish() {
