@@ -117,50 +117,62 @@ function checklvl() {
     if (player.level >= 25 && player.level < 50) {
         document.getElementById("rifle").innerHTML = "Rifle: Type-88";
         document.getElementById("rank").innerHTML = "Rank: Marksman";
+        background.src = "img/background2.png";
     }
     if (player.level >= 50 && player.level < 75) {
         document.getElementById("rifle").innerHTML = "Rifle: Fall";
         document.getElementById("rank").innerHTML = "Rank: Marksman Elite";
+        background.src = "img/background2.png";
     }
     if (player.level >= 75 && player.level < 100){
         document.getElementById("rifle").innerHTML = "Rifle: M39";
         document.getElementById("rank").innerHTML = "Rank: Marksman Sergeant";
+        background.src = "img/background2.png";
     }
     if (player.level >= 100 && player.level < 150) {
         document.getElementById("rifle").innerHTML = "Rifle: Scar-H";
         document.getElementById("rank").innerHTML = "Rank: Sniper";
+        background.src = "img/background3.png";
     }
     if (player.level >= 150 && player.level < 200){
         document.getElementById("rifle").innerHTML = "Rifle: SPG1";
         document.getElementById("rank").innerHTML = "Rank: Sniper Elite";
+        background.src = "img/background3.png";
     }
     if (player.level >= 200 && player.level < 250){
         document.getElementById("rifle").innerHTML = "Rifle: RSASS";
         document.getElementById("rank").innerHTML = "Rank: Sniper Sergeant";
+        background.src = "img/background3.png";
     }
     if (player.level >= 250 && player.level < 300) {
         document.getElementById("rifle").innerHTML = "Rifle: SVD";
         document.getElementById("rank").innerHTML = "Rank: Sharpshooter";
+        background.src = "img/background4.png";
     }
     if (player.level >= 300 && player.level < 350){
         document.getElementById("rifle").innerHTML = "Rifle: M110";
         document.getElementById("rank").innerHTML = "Rank: Sharpshooter Elite";
+        background.src = "img/background4.png";
     }
     if (player.level >= 350 && player.level < 400){
         document.getElementById("rifle").innerHTML = "Rifle: M2010";
         document.getElementById("rank").innerHTML = "Rank: Sharpshooter Sergeant";
+        background.src = "img/background4.png";
     }
     if (player.level >= 400 && player.level < 450){
         document.getElementById("rifle").innerHTML = "Rifle: Gol";
         document.getElementById("rank").innerHTML = "Rank: Spec-Ops Sniper";
+        background.src = "img/background5.png";
     }
     if (player.level >= 450 && player.level < 500){
         document.getElementById("rifle").innerHTML = "Rifle: AWM";
         document.getElementById("rank").innerHTML = "Rank: Spec-Ops Sharpshooter";
+        background.src = "img/background5.png";
     }
     if (player.level >= 500) {
         document.getElementById("rifle").innerHTML = "Rifle: M98B";
         document.getElementById("rank").innerHTML = "Rank: Deadshot";
+        background.src = "img/background6.png";
     }
 }
 
