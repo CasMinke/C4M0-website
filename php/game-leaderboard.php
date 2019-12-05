@@ -21,7 +21,7 @@
 <header>
     <nav class="navbar fixed-top navbar-expand-lg nopadding">
         <div class="container-fluid header">
-            <img src="../img/c4m0-logo.png" class="logo-header">
+            <img src="../img/c4m0-logo.png" class="logo-header"><!--image made by Cas Minke -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
                 <img src="../img/hamburger.png" class="change-toggler1" id="toggler-nav">
             </button>

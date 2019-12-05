@@ -21,7 +21,7 @@
 <header>
     <nav class="navbar fixed-top navbar-expand-lg nopadding">
         <div class="container-fluid header">
-            <img src="../img/c4m0-logo.png" class="logo-header">
+            <img src="../img/c4m0-logo.png" class="logo-header"><!--image made by Cas Minke -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
                 <img src="../img/hamburger.png" class="change-toggler1" id="toggler-nav">
             </button>
@@ -87,7 +87,7 @@
             ?>
         </div>
         <div class="col-12 col-lg-6 col-xl-6 nopadding hidden-on-mobile-tablet">
-            <img src="../img/soldiers-members.png" class="member-img">
+            <img src="../img/soldiers-members.png" class="member-img"><!-- soldiers image is from https://pixabay.com/nl/vectors/leger-geweren-soldaat-peloton-305276/ the license is https://pixabay.com/nl/service/license/ and i have not edited this image-->
         </div>
     </div>
 </div>
