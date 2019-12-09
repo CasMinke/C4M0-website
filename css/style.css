@@ -615,6 +615,16 @@ footer {
 .underline {
     text-decoration: underline;
 }
+.reset-btn{
+    background-color: #5a6300;
+    border: none;
+    color: #ffffff;
+    transition: 200ms;
+}
+.reset-btn:hover{
+    background-color: #ffffff;
+    color: #5a6300;
+}
 
 .break {
     display: block;

@@ -359,7 +359,11 @@ function save() {
     localStorage.setItem("enemy.extraloot", enemy.extraloot);
 }
 
+
 function reset() {
-        localStorage.clear();
-        location.reload();
+    localStorage.clear();
+    location.href = "minigame.html";
+}
+function dontreset() {
+    location.href = "minigame.html";
 }
