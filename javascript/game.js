@@ -134,22 +134,22 @@ function checklvl() {
     }
     if (player.level >= 100 && player.level < 150) {
         document.getElementById("vehicle").innerHTML = "Vehicle: Jeep Wrangler";
-        document.getElementById("newguns").innerHTML = "New guns: Union set";
+        document.getElementById("newguns").innerHTML = "New guns: Civil war set";
         background.src = "img/background2.png";
     }
     if (player.level >= 150 && player.level < 200) {
         document.getElementById("vehicle").innerHTML = "Vehicle: Jeep Wrangler";
-        document.getElementById("newguns").innerHTML = "New guns: Union set";
+        document.getElementById("newguns").innerHTML = "New guns: Civil war set";
         background.src = "img/background2.png";
     }
     if (player.level >= 200 && player.level < 250) {
         document.getElementById("vehicle").innerHTML = "Vehicle: Humvee";
-        document.getElementById("newguns").innerHTML = "New guns: WW2 set";
+        document.getElementById("newguns").innerHTML = "New guns: World war 2 set";
         background.src = "img/background3.png";
     }
     if (player.level >= 250 && player.level < 300) {
         document.getElementById("vehicle").innerHTML = "Vehicle: Humvee";
-        document.getElementById("newguns").innerHTML = "New guns: WW2 set";
+        document.getElementById("newguns").innerHTML = "New guns: World war 2 set";
         background.src = "img/background3.png";
     }
     if (player.level >= 300 && player.level < 350) {
