@@ -1,4 +1,4 @@
-var player = {level: 500, damage: 10, experience: 0, coins: 0, kills: 0, experienceneeded: 100, experienceperkill: 25, extradamage: 5};
+var player = {level: 1, damage: 10, experience: 0, coins: 0, kills: 0, experienceneeded: 100, experienceperkill: 25, extradamage: 5};
 var enemy = {level: 1, health: 100, healthmax: 100, experience: 0, loot: 1, experienceneeded: 100, experienceperdeath: 25, extraloot: 1};
 var damageovertime = 0;
 var extradamageovertime = 5;
@@ -289,18 +289,27 @@ function upgrade3() {
     if (player.coins < costupgr3) {
         alert("to buy this upgrade you need to have " + costupgr3 + " Dogtags");
     } else {
-        enemy.loot = enemy.loot + enemy.extraloot;
-        player.coins = player.coins - costupgr3;
-        costupgr3 = costupgr3 * 2;
-        enemy.extraloot = enemy.extraloot * 2;
-        document.getElementById("upgrade3").innerHTML = "+ " + enemy.extraloot + " loot <p class='stats upgrade3'>" + costupgr3 + " <img src='img/dog-tag.png' class='price'></p>";
-        document.getElementById("coins").innerHTML = player.coins + "<img src='img/dog-tag.png' class='dogtag-currency'>";
-        document.getElementById("loot").innerHTML = "Loot: " + enemy.loot + "<img src='img/dog-tag.png' class='dogtag-loot'>";
+        if (enemy.loot === 999999999){
+            alert("this upgrade is upgraded to the maximum amount");
+            document.getElementById("loot").innerHTML = "Loot: " + enemy.loot + "<img src='img/dog-tag.png' class='dogtag-loot'>";
+        }else {
+            enemy.loot = enemy.loot + enemy.extraloot;
+            player.coins = player.coins - costupgr3;
+            costupgr3 = costupgr3 * 2;
+            enemy.extraloot = enemy.extraloot * 2;
+            if (enemy.loot > 999999999){
+                enemy.loot = 999999999;
+            }
+            document.getElementById("upgrade3").innerHTML = "+ " + enemy.extraloot + " loot <p class='stats upgrade3'>" + costupgr3 + " <img src='img/dog-tag.png' class='price'></p>";
+            document.getElementById("coins").innerHTML = player.coins + "<img src='img/dog-tag.png' class='dogtag-currency'>";
+            document.getElementById("loot").innerHTML = "Loot: " + enemy.loot + "<img src='img/dog-tag.png' class='dogtag-loot'>";
+        }
         save();
         if (costupgr3 > 999999999) {
             costupgr3 = 999999999;
             document.getElementById("upgrade3").innerHTML = "+ " + enemy.extraloot + " loot <p class='stats upgrade3'>" + costupgr3 + " <img src='img/dog-tag.png' class='price'></p>";
         }
+
     }
 }
 
