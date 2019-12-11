@@ -1,4 +1,4 @@
-var player = {level: 1, damage: 10, experience: 0, coins: 0, kills: 0, experienceneeded: 100, experienceperkill: 25, extradamage: 5};
+var player = {level: 500, damage: 10, experience: 0, coins: 0, kills: 0, experienceneeded: 100, experienceperkill: 25, extradamage: 5};
 var enemy = {level: 1, health: 100, healthmax: 100, experience: 0, loot: 1, experienceneeded: 100, experienceperdeath: 25, extraloot: 1};
 var damageovertime = 0;
 var extradamageovertime = 5;
@@ -199,21 +199,21 @@ function checklvl() {
         document.getElementById("vehicle").innerHTML = "Vehicle: Humvee with turret";
         document.getElementById("newguns").innerHTML = "New guns: Vietnam war set";
         background.src = "img/background4.png";
-        soldierimg = "img/soldier-1.png";
-        soldierhit = "img/soldier2-1.png";
-        soldiershot = "img/soldiershot-1.png";
-        sniperimg = "img/sniper-1.png";
-        snipershoot = "img/sniper2-1.png";
+        soldierimg = "img/soldier-3.png";
+        soldierhit = "img/soldier2-3.png";
+        soldiershot = "img/soldiershot-3.png";
+        sniperimg = "img/sniper-3.png";
+        snipershoot = "img/sniper2-3.png";
     }
     if (player.level >= 350 && player.level < 400) {
         document.getElementById("vehicle").innerHTML = "Vehicle: Humvee with turret";
         document.getElementById("newguns").innerHTML = "New guns: Vietnam war set";
         background.src = "img/background4.png";
-        soldierimg = "img/soldier-1.png";
-        soldierhit = "img/soldier2-1.png";
-        soldiershot = "img/soldiershot-1.png";
-        sniperimg = "img/sniper-1.png";
-        snipershoot = "img/sniper2-1.png";
+        soldierimg = "img/soldier-3.png";
+        soldierhit = "img/soldier2-3.png";
+        soldiershot = "img/soldiershot-3.png";
+        sniperimg = "img/sniper-3.png";
+        snipershoot = "img/sniper2-3.png";
     }
     if (player.level >= 400 && player.level < 450) {
         document.getElementById("vehicle").innerHTML = "Vehicle: APC";
@@ -239,11 +239,11 @@ function checklvl() {
         document.getElementById("vehicle").innerHTML = "Vehicle: M1 Abrams tank";
         document.getElementById("newguns").innerHTML = "New guns: Modern sniper set";
         background.src = "img/background6.png";
-        soldierimg = "img/soldier-3.png";
-        soldierhit = "img/soldier2-3.png";
-        soldiershot = "img/soldiershot-3.png";
-        sniperimg = "img/sniper-3.png";
-        snipershoot = "img/sniper2-3.png";
+        soldierimg = "img/soldier-1.png";
+        soldierhit = "img/soldier2-1.png";
+        soldiershot = "img/soldiershot-1.png";
+        sniperimg = "img/sniper-1.png";
+        snipershoot = "img/sniper2-1.png";
     }
 }
 
