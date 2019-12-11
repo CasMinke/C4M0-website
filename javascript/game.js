@@ -318,6 +318,8 @@ function upgrade4() {
         document.getElementById("playerlevel").innerHTML = "Playerlevel: " + player.level;
         document.getElementById("damage").innerHTML = "Damage per shot: " + player.damage;
         checklvl();
+        soldier.src = soldierimg;
+        sniper.src = sniperimg;
         save();
         if (costupgr4 > 999999999) {
             costupgr4 = 999999999;
