@@ -9,6 +9,12 @@ var costupgr4 = 30;
 var upgradelvls = 5;
 var timer = setInterval(upgradeuitvoer, 1000);
 var buttonpressed = 0;
+var soldierimg = "img/soldier.png";
+var sniperimg = "img/sniper.png";
+var soldierhit = "img/soldier2.png";
+var snipershoot = "img/sniper2.png";
+var soldiershot = "img/soldiershot.png";
+var soldierdied = "img/soldierdied.png";
 
 if (localStorage.getItem("player.level") == null) {
 
@@ -55,6 +61,8 @@ function refreshall() {
     document.getElementById("upgrade3").innerHTML = "+ " + enemy.extraloot + " loot <p class='stats upgrade3'>" + costupgr3 + " <img src='img/dog-tag.png' class='price'></p>";
     document.getElementById("loot").innerHTML = "Loot: " + enemy.loot + "<img src='img/dog-tag.png' class='dogtag-loot'>";
     document.getElementById("upgrade4").innerHTML = "+ " + upgradelvls + " lvls <p class='stats upgrade4'>" + costupgr4 + " <img src='img/dog-tag.png' class='price'></p>";
+    soldier.src = soldierimg;
+    sniper.src = sniperimg;
 }
 
 function attack() {
@@ -121,61 +129,121 @@ function checklvl() {
         document.getElementById("vehicle").innerHTML = "Vehicle: None";
         document.getElementById("newguns").innerHTML = "New guns: None";
         background.src = "img/background.png";
+        soldierimg = "img/soldier.png";
+        soldierhit = "img/soldier2.png";
+        soldiershot = "img/soldiershot.png";
+        sniperimg = "img/sniper.png";
+        snipershoot = "img/sniper2.png";
     }
     if (player.level >= 50 && player.level < 75) {
         document.getElementById("vehicle").innerHTML = "Vehicle: Ford F150";
         document.getElementById("newguns").innerHTML = "New guns: Cowboy set";
         background.src = "img/background1.png";
+        soldierimg = "img/soldier-6.png";
+        soldierhit = "img/soldier2-6.png";
+        soldiershot = "img/soldiershot-6.png";
+        sniperimg = "img/sniper-6.png";
+        snipershoot = "img/sniper2-6.png";
     }
     if (player.level >= 75 && player.level < 100) {
         document.getElementById("vehicle").innerHTML = "Vehicle: Ford F150";
         document.getElementById("newguns").innerHTML = "New guns: Cowboy set";
         background.src = "img/background1.png";
+        soldierimg = "img/soldier-6.png";
+        soldierhit = "img/soldier2-6.png";
+        soldiershot = "img/soldiershot-6.png";
+        sniperimg = "img/sniper-6.png";
+        snipershoot = "img/sniper2-6.png";
     }
     if (player.level >= 100 && player.level < 150) {
         document.getElementById("vehicle").innerHTML = "Vehicle: Jeep Wrangler";
         document.getElementById("newguns").innerHTML = "New guns: Civil war set";
         background.src = "img/background2.png";
+        soldierimg = "img/soldier-2.png";
+        soldierhit = "img/soldier2-2.png";
+        soldiershot = "img/soldiershot-2.png";
+        sniperimg = "img/sniper-2.png";
+        snipershoot = "img/sniper2-2.png";
     }
     if (player.level >= 150 && player.level < 200) {
         document.getElementById("vehicle").innerHTML = "Vehicle: Jeep Wrangler";
         document.getElementById("newguns").innerHTML = "New guns: Civil war set";
         background.src = "img/background2.png";
+        soldierimg = "img/soldier-2.png";
+        soldierhit = "img/soldier2-2.png";
+        soldiershot = "img/soldiershot-2.png";
+        sniperimg = "img/sniper-2.png";
+        snipershoot = "img/sniper2-2.png";
     }
     if (player.level >= 200 && player.level < 250) {
         document.getElementById("vehicle").innerHTML = "Vehicle: Humvee";
         document.getElementById("newguns").innerHTML = "New guns: World war 2 set";
         background.src = "img/background3.png";
+        soldierimg = "img/soldier-5.png";
+        soldierhit = "img/soldier2-5.png";
+        soldiershot = "img/soldiershot-5.png";
+        sniperimg = "img/sniper-5.png";
+        snipershoot = "img/sniper2-5.png";
     }
     if (player.level >= 250 && player.level < 300) {
         document.getElementById("vehicle").innerHTML = "Vehicle: Humvee";
         document.getElementById("newguns").innerHTML = "New guns: World war 2 set";
         background.src = "img/background3.png";
+        soldierimg = "img/soldier-5.png";
+        soldierhit = "img/soldier2-5.png";
+        soldiershot = "img/soldiershot-5.png";
+        sniperimg = "img/sniper-5.png";
+        snipershoot = "img/sniper2-5.png";
     }
     if (player.level >= 300 && player.level < 350) {
         document.getElementById("vehicle").innerHTML = "Vehicle: Humvee with turret";
         document.getElementById("newguns").innerHTML = "New guns: Vietnam war set";
         background.src = "img/background4.png";
+        soldierimg = "img/soldier-1.png";
+        soldierhit = "img/soldier2-1.png";
+        soldiershot = "img/soldiershot-1.png";
+        sniperimg = "img/sniper-1.png";
+        snipershoot = "img/sniper2-1.png";
     }
     if (player.level >= 350 && player.level < 400) {
         document.getElementById("vehicle").innerHTML = "Vehicle: Humvee with turret";
         document.getElementById("newguns").innerHTML = "New guns: Vietnam war set";
         background.src = "img/background4.png";
+        soldierimg = "img/soldier-1.png";
+        soldierhit = "img/soldier2-1.png";
+        soldiershot = "img/soldiershot-1.png";
+        sniperimg = "img/sniper-1.png";
+        snipershoot = "img/sniper2-1.png";
     }
     if (player.level >= 400 && player.level < 450) {
         document.getElementById("vehicle").innerHTML = "Vehicle: APC";
         document.getElementById("newguns").innerHTML = "New guns: U.S. Army set";
         background.src = "img/background5.png";
+        soldierimg = "img/soldier-4.png";
+        soldierhit = "img/soldier2-4.png";
+        soldiershot = "img/soldiershot-4.png";
+        sniperimg = "img/sniper-4.png";
+        snipershoot = "img/sniper2-4.png";
     }
     if (player.level >= 450 && player.level < 500) {
         document.getElementById("vehicle").innerHTML = "Vehicle: APC";
         document.getElementById("newguns").innerHTML = "New guns: U.S. Army set";
         background.src = "img/background5.png";
+        soldierimg = "img/soldier-4.png";
+        soldierhit = "img/soldier2-4.png";
+        soldiershot = "img/soldiershot-4.png";
+        sniperimg = "img/sniper-4.png";
+        snipershoot = "img/sniper2-4.png";
     }
     if (player.level >= 500) {
         document.getElementById("vehicle").innerHTML = "Vehicle: M1 Abrams tank";
         document.getElementById("newguns").innerHTML = "New guns: Modern sniper set";
         background.src = "img/background6.png";
+        soldierimg = "img/soldier-3.png";
+        soldierhit = "img/soldier2-3.png";
+        soldiershot = "img/soldiershot-3.png";
+        sniperimg = "img/sniper-3.png";
+        snipershoot = "img/sniper2-3.png";
     }
 }
 
@@ -270,8 +338,8 @@ function upgradeuitvoer() {
 
 function animatie() {
     if (enemy.health > 0) {
-        soldier.src = "img/soldier2.png";
-        sniper.src = "img/sniper2.png";
+        soldier.src = soldierhit;
+        sniper.src = snipershoot;
         setTimeout(shotsoldier, 100);
         setTimeout(normalsniper, 100);
         clearTimeout(shotsoldier);
@@ -279,8 +347,8 @@ function animatie() {
 
     } else {
         attackbtn.disabled = true, setTimeout(attackenable, 1000);
-        soldier.src = "img/soldierdied.png", setTimeout(normalsoldier, 1000);
-        sniper.src = "img/sniper2.png", setTimeout(normalsniper, 100);
+        soldier.src = soldierdied, setTimeout(normalsoldier, 1000);
+        sniper.src = snipershoot, setTimeout(normalsniper, 100);
         clearTimeout(normalsoldier);
         clearTimeout(normalsniper);
         clearTimeout(attackenable);
@@ -288,15 +356,15 @@ function animatie() {
 }
 
 function normalsoldier() {
-    soldier.src = "img/soldier.png";
+    soldier.src = soldierimg;
 }
 
 function normalsniper() {
-    sniper.src = "img/sniper.png"
+    sniper.src = sniperimg;
 }
 
 function shotsoldier() {
-    soldier.src = "img/soldiershot.png";
+    soldier.src = soldiershot;
 }
 
 function attackenable() {
