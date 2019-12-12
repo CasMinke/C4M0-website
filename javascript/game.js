@@ -1,4 +1,4 @@
-var player = {level: 1, damage: 10, experience: 0, coins: 0, kills: 0, experienceneeded: 100, experienceperkill: 25, extradamage: 5};
+var player = {level: 500, damage: 10, experience: 0, coins: 0, kills: 0, experienceneeded: 100, experienceperkill: 25, extradamage: 5};
 var enemy = {level: 1, health: 100, healthmax: 100, experience: 0, loot: 1, experienceneeded: 100, experienceperdeath: 25, extraloot: 1};
 var damageovertime = 0;
 var extradamageovertime = 5;
@@ -63,6 +63,9 @@ function refreshall() {
     document.getElementById("upgrade4").innerHTML = "+ " + upgradelvls + " lvls <p class='stats upgrade4'>" + costupgr4 + " <img src='img/dog-tag.png' class='price'></p>";
     soldier.src = soldierimg;
     sniper.src = sniperimg;
+    if (enemy.loot === 999999999){
+        document.getElementById("upgrade3").innerHTML = "max upgraded";
+    }
 }
 
 function attack() {
@@ -287,7 +290,11 @@ function upgrade2() {
 
 function upgrade3() {
     if (player.coins < costupgr3) {
-        alert("to buy this upgrade you need to have " + costupgr3 + " Dogtags");
+        if (enemy.loot === 999999999){
+
+        }else {
+            alert("to buy this upgrade you need to have " + costupgr3 + " Dogtags");
+        }
     } else {
         if (enemy.loot === 999999999){
             alert("this upgrade is upgraded to the maximum amount");
@@ -311,7 +318,14 @@ function upgrade3() {
         }
 
     }
+    checklootamount();
 }
+function checklootamount() {
+    if (enemy.loot === 999999999){
+        document.getElementById("upgrade3").innerHTML = "max upgraded";
+    }
+}
+
 
 function upgrade4() {
     if (player.coins < costupgr4) {
