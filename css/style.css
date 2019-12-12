@@ -603,6 +603,9 @@ footer {
 .custom-padding-game-form {
     padding-bottom: 20px;
 }
+.custom-padding-join-discord{
+    padding-bottom: 20px;
+}
 
 ::placeholder {
     opacity: 1;
