@@ -105,9 +105,10 @@
                 class="break">playerlevel 500 to unlock</span></button>
     </div>
 </div>
-<form class="contact-form custom-padding-game-form" method="post" name="gameform" action="php/game-form.php">
+<form class="contact-form custom-padding-game-form" method="post" name="gameform" action="php/logingame.php">
     <input type="hidden" name="highscore" id="highscore" placeholder="highscore" value="" class="input-form">
-    <input type="text" name="nickname" placeholder="nickname" class="input-form">
+    <input type="text" name="username" placeholder="username" class="input-form">
+    <input type="password" name="password" placeholder="password" class="input-form">
     <input type="submit" value="save highscore" class="submit-btn" onclick="submitheighscore();">
 </form>
 <div class='container-fluid padding-for-footer'><a href='php/game-leaderboard.php' class='backhome-btn white-link'>go to
