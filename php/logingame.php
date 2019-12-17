@@ -36,26 +36,28 @@ if (!isset($highscore) || trim($highscore) == 0){
                 if ($username == $search["nickname"]) {
                     $duplicate = true;
                 }
-                if ($highscore > $search["highscore"]){
+                if ($highscore > $search["highscore"]) {
                     $higherthanhighscore = true;
                 }
-            }
-            if ($duplicate) {
-                if ($higherthanhighscore) {
-                    $sql = $conn->prepare("update game set nickname = :nickname, highscore = :highscore where nickname = :nickname");
 
-                    $sql->bindParam(":nickname", $username);
-                    $sql->bindParam(":highscore", $highscore);
+                if ($duplicate) {
+                    if ($higherthanhighscore) {
+                        $sql = $conn->prepare("update game set nickname = :nickname, highscore = :highscore where nickname = :nickname");
 
-                    $sql->execute();
-                    header("location: game-leaderboard.php");
-                    exit();
-                }else{
-                    header("location: ../nohighscore.html");
-                    exit();
+                        $sql->bindParam(":nickname", $username);
+                        $sql->bindParam(":highscore", $highscore);
+
+                        $sql->execute();
+                        header("location: game-leaderboard.php");
+                        exit();
+                    } else {
+                        header("location: ../nohighscore.html");
+                        exit();
+                    }
+
                 }
-
-            } else {
+            }
+        if ($duplicate == false) {
                 $sql = $conn->prepare("insert into game values (:id, :highscore, :nickname)");
 
                 $sql->bindParam(":id", $id);
