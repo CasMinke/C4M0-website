@@ -6,7 +6,7 @@ $pass_md5 = md5($password);
 $duplicate = false;
 
 require_once "c4m0-connect.php";
-if (!isset($nickname) || trim($nickname) == '' || !isset($password) || trim($password) == '') {
+if (!isset($nickname) || trim($nickname) == '' || $_POST["password"] == '') {
     header("location: ../fields-not-filled.html");
 } else {
     $searchfordup = $conn->prepare("select * from gameaccount");
