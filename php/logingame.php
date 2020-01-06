@@ -35,10 +35,11 @@ if (!isset($highscore) || trim($highscore) == 0){
             foreach ($searchfordup as $search) {
                 if ($username == $search["nickname"]) {
                     $duplicate = true;
+                    if ($highscore > $search["highscore"]) {
+                        $higherthanhighscore = true;
+                    }
                 }
-                if ($highscore > $search["highscore"]) {
-                    $higherthanhighscore = true;
-                }
+
 
                 if ($duplicate) {
                     if ($higherthanhighscore) {
