@@ -362,6 +362,7 @@ footer {
     padding: 5px 10px 5px 10px;
     border-radius: 25px;
     line-height: 5px;
+    transition: 200ms;
 }
 .middle-button-game:hover{
     color: #5a6300;
@@ -381,6 +382,7 @@ footer {
     padding: 5px 10px 5px 10px;
     border-radius: 25px;
     line-height: 5px;
+    transition: 200ms;
 }
 .middletop-button-game:hover{
     color: #5a6300;
@@ -412,6 +414,7 @@ footer {
     padding: 5px 10px 5px 10px;
     border-radius: 25px;
     line-height: 5px;
+    transition: 200ms;
 }
 .left-button-game:hover{
     color: #5a6300;
@@ -436,6 +439,7 @@ footer {
     padding: 5px 10px 5px 10px;
     border-radius: 25px;
     line-height: 5px;
+    transition: 200ms;
 }
 .right-button-game:hover{
     color: #5a6300;
@@ -463,6 +467,7 @@ footer {
     right: 0;
     margin-left: auto;
     margin-right: auto;
+    transition: 200ms;
 }
 .finish:hover{
     color: #5a6300;
@@ -487,6 +492,7 @@ footer {
     padding: 5px 10px 5px 10px;
     border-radius: 25px;
     line-height: 5px;
+    transition: 200ms;
 }
 .lefttop-button-game:hover{
     color: #5a6300;
@@ -511,6 +517,7 @@ footer {
     padding: 5px 10px 5px 10px;
     border-radius: 25px;
     line-height: 5px;
+    transition: 200ms;
 }
 .righttop-button-game:hover{
     color: #5a6300;
