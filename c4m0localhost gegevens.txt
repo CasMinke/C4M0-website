@@ -1,9 +1,0 @@
-the website:
-192.168.0.22/c4m0-website
-on the minigame page on the bottom you can make a account witch you can use to save your highscore to the leaderboard
-
-the admin message page:
-192.168.0.22/c4m0-website/login.html
-test account:
-username: test
-password: test
