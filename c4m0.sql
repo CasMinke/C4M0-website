@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 17 dec 2019 om 14:20
+-- Gegenereerd op: 07 jan 2020 om 13:45
 -- Serverversie: 10.4.8-MariaDB
 -- PHP-versie: 7.3.11
 
@@ -41,9 +41,10 @@ CREATE TABLE `game` (
 INSERT INTO `game` (`id`, `highscore`, `nickname`) VALUES
 (1, 10338, 'Cas-Minke'),
 (2, 13, 'test2'),
-(3, 11, 'test'),
+(3, 54, 'test'),
 (4, 28, 'test4'),
-(5, 3, 'test3');
+(5, 4, 'test3'),
+(6, 8, 'thisisatest');
 
 -- --------------------------------------------------------
 
@@ -66,7 +67,8 @@ INSERT INTO `gameaccount` (`id`, `username`, `password`) VALUES
 (2, 'test', '098f6bcd4621d373cade4e832627b4f6'),
 (3, 'test2', 'ad0234829205b9033196ba818f7a872b'),
 (4, 'test3', '8ad8757baa8564dc136c1e07507f4a98'),
-(5, 'test4', '86985e105f79b95d6bc918fb45ec7727');
+(5, 'test4', '86985e105f79b95d6bc918fb45ec7727'),
+(6, 'thisisatest', 'f830f69d23b8224b512a0dc2f5aec974');
 
 -- --------------------------------------------------------
 
@@ -133,7 +135,8 @@ INSERT INTO `messages` (`id`, `contact`, `email`, `question`) VALUES
 (2, 'test the tester', 'test@test.com', 'this is a test message again'),
 (3, 'tester the tester', 'test2@test.com', 'this is the 3th test message'),
 (4, 'tester the test', 'test3@test.com', 'this is the 4th test message'),
-(5, 'tester', 'test4@test.com', 'this test is for max amount of characters adwadawdawdwadwadwadadawdawdawdwadawdwadwadawdaaaaaaaaaadddwasdwadsawdaswdasdawdasawdsawdasdsaaaaaaaaaaaaaaawwwwwwwwwwwwwwwddddddddddddddddddssssssssssssssssssssaaaaaaaaaaaaaaaaaaaawwwwwwwwwwwwwwwwwwwwddddddd');
+(5, 'tester', 'test4@test.com', 'this test is for max amount of characters adwadawdawdwadwadwadadawdawdawdwadawdwadwadawdaaaaaaaaaadddwasdwadsawdaswdasdawdasawdsawdasdsaaaaaaaaaaaaaaawwwwwwwwwwwwwwwddddddddddddddddddssssssssssssssssssssaaaaaaaaaaaaaaaaaaaawwwwwwwwwwwwwwwwwwwwddddddd'),
+(7, 'testert', 'testert@testmail.com', 'this is a test from testert');
 
 --
 -- Indexen voor geëxporteerde tabellen
@@ -177,13 +180,13 @@ ALTER TABLE `messages`
 -- AUTO_INCREMENT voor een tabel `game`
 --
 ALTER TABLE `game`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT voor een tabel `gameaccount`
 --
 ALTER TABLE `gameaccount`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT voor een tabel `login`
@@ -201,7 +204,7 @@ ALTER TABLE `members`
 -- AUTO_INCREMENT voor een tabel `messages`
 --
 ALTER TABLE `messages`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
