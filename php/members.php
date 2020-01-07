@@ -94,7 +94,7 @@
 <div class="container-fluid custom-padding-join-discord">
     <div class="textarea">
         <h1 class="txtareatitle">want to join our discord server?</h1>
-        <p class="text-p center-txt">you can join our dicord server at <a href="https://discord.gg/qhg2UzM" class="white-link">https://discord.gg/qhg2UzM</a></p>
+        <p class="text-p center-txt">you can join our dicord server at <a href="https://discord.gg/qhg2UzM" class="white-link" target="_blank">https://discord.gg/qhg2UzM</a></p>
     </div>
 </div>
 <div class="container-fluid padding-for-footer">
