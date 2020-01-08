@@ -796,6 +796,9 @@ footer {
     .custom-padding-game-form {
         padding-top: 60px;
     }
+    .custom-margin-undergame{
+        margin-top: 0px;
+    }
 }
 
 /*desktop*/
