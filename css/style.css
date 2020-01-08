@@ -10,6 +10,9 @@ body {
     min-height: 100%;
     position: relative;
 }
+.preload{
+    display: none;
+}
 
 .fixed-top.scrolled .header {
     background-color: #ffffff !important;

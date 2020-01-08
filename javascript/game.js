@@ -10,9 +10,9 @@ var upgradelvls = 5;
 var timer = setInterval(upgradeuitvoer, 1000);
 var buttonpressed = 0;
 var soldierimg = "img/soldier.png";
-var sniperimg = "img/sniper.png";
+var sniperimg = "img/Sniper.png";
 var soldierhit = "img/soldier2.png";
-var snipershoot = "img/sniper2.png";
+var snipershoot = "img/Sniper2.png";
 var soldiershot = "img/soldiershot.png";
 var soldierdied = "img/soldierdied.png";
 
@@ -135,8 +135,8 @@ function checklvl() {
         soldierimg = "img/soldier.png";
         soldierhit = "img/soldier2.png";
         soldiershot = "img/soldiershot.png";
-        sniperimg = "img/sniper.png";
-        snipershoot = "img/sniper2.png";
+        sniperimg = "img/Sniper.png";
+        snipershoot = "img/Sniper2.png";
     }
     if (player.level >= 50 && player.level < 75) {
         document.getElementById("vehicle").innerHTML = "Vehicle: Ford F150";
@@ -145,8 +145,8 @@ function checklvl() {
         soldierimg = "img/soldier-6.png";
         soldierhit = "img/soldier2-6.png";
         soldiershot = "img/soldiershot-6.png";
-        sniperimg = "img/sniper-6.png";
-        snipershoot = "img/sniper2-6.png";
+        sniperimg = "img/Sniper-6.png";
+        snipershoot = "img/Sniper2-6.png";
     }
     if (player.level >= 75 && player.level < 100) {
         document.getElementById("vehicle").innerHTML = "Vehicle: Ford F150";
@@ -155,8 +155,8 @@ function checklvl() {
         soldierimg = "img/soldier-6.png";
         soldierhit = "img/soldier2-6.png";
         soldiershot = "img/soldiershot-6.png";
-        sniperimg = "img/sniper-6.png";
-        snipershoot = "img/sniper2-6.png";
+        sniperimg = "img/Sniper-6.png";
+        snipershoot = "img/Sniper2-6.png";
     }
     if (player.level >= 100 && player.level < 150) {
         document.getElementById("vehicle").innerHTML = "Vehicle: Jeep Wrangler";
@@ -165,8 +165,8 @@ function checklvl() {
         soldierimg = "img/soldier-2.png";
         soldierhit = "img/soldier2-2.png";
         soldiershot = "img/soldiershot-2.png";
-        sniperimg = "img/sniper-2.png";
-        snipershoot = "img/sniper2-2.png";
+        sniperimg = "img/Sniper-2.png";
+        snipershoot = "img/Sniper2-2.png";
     }
     if (player.level >= 150 && player.level < 200) {
         document.getElementById("vehicle").innerHTML = "Vehicle: Jeep Wrangler";
@@ -175,8 +175,8 @@ function checklvl() {
         soldierimg = "img/soldier-2.png";
         soldierhit = "img/soldier2-2.png";
         soldiershot = "img/soldiershot-2.png";
-        sniperimg = "img/sniper-2.png";
-        snipershoot = "img/sniper2-2.png";
+        sniperimg = "img/Sniper-2.png";
+        snipershoot = "img/Sniper2-2.png";
     }
     if (player.level >= 200 && player.level < 250) {
         document.getElementById("vehicle").innerHTML = "Vehicle: Humvee";
@@ -185,8 +185,8 @@ function checklvl() {
         soldierimg = "img/soldier-5.png";
         soldierhit = "img/soldier2-5.png";
         soldiershot = "img/soldiershot-5.png";
-        sniperimg = "img/sniper-5.png";
-        snipershoot = "img/sniper2-5.png";
+        sniperimg = "img/Sniper-5.png";
+        snipershoot = "img/Sniper2-5.png";
     }
     if (player.level >= 250 && player.level < 300) {
         document.getElementById("vehicle").innerHTML = "Vehicle: Humvee";
@@ -195,8 +195,8 @@ function checklvl() {
         soldierimg = "img/soldier-5.png";
         soldierhit = "img/soldier2-5.png";
         soldiershot = "img/soldiershot-5.png";
-        sniperimg = "img/sniper-5.png";
-        snipershoot = "img/sniper2-5.png";
+        sniperimg = "img/Sniper-5.png";
+        snipershoot = "img/Sniper2-5.png";
     }
     if (player.level >= 300 && player.level < 350) {
         document.getElementById("vehicle").innerHTML = "Vehicle: Humvee with turret";
@@ -205,8 +205,8 @@ function checklvl() {
         soldierimg = "img/soldier-3.png";
         soldierhit = "img/soldier2-3.png";
         soldiershot = "img/soldiershot-3.png";
-        sniperimg = "img/sniper-3.png";
-        snipershoot = "img/sniper2-3.png";
+        sniperimg = "img/Sniper-3.png";
+        snipershoot = "img/Sniper2-3.png";
     }
     if (player.level >= 350 && player.level < 400) {
         document.getElementById("vehicle").innerHTML = "Vehicle: Humvee with turret";
@@ -215,8 +215,8 @@ function checklvl() {
         soldierimg = "img/soldier-3.png";
         soldierhit = "img/soldier2-3.png";
         soldiershot = "img/soldiershot-3.png";
-        sniperimg = "img/sniper-3.png";
-        snipershoot = "img/sniper2-3.png";
+        sniperimg = "img/Sniper-3.png";
+        snipershoot = "img/Sniper2-3.png";
     }
     if (player.level >= 400 && player.level < 450) {
         document.getElementById("vehicle").innerHTML = "Vehicle: APC";
@@ -225,8 +225,8 @@ function checklvl() {
         soldierimg = "img/soldier-4.png";
         soldierhit = "img/soldier2-4.png";
         soldiershot = "img/soldiershot-4.png";
-        sniperimg = "img/sniper-4.png";
-        snipershoot = "img/sniper2-4.png";
+        sniperimg = "img/Sniper-4.png";
+        snipershoot = "img/Sniper2-4.png";
     }
     if (player.level >= 450 && player.level < 500) {
         document.getElementById("vehicle").innerHTML = "Vehicle: APC";
@@ -235,8 +235,8 @@ function checklvl() {
         soldierimg = "img/soldier-4.png";
         soldierhit = "img/soldier2-4.png";
         soldiershot = "img/soldiershot-4.png";
-        sniperimg = "img/sniper-4.png";
-        snipershoot = "img/sniper2-4.png";
+        sniperimg = "img/Sniper-4.png";
+        snipershoot = "img/Sniper2-4.png";
     }
     if (player.level >= 500) {
         document.getElementById("vehicle").innerHTML = "Vehicle: M1 Abrams tank";
@@ -245,8 +245,8 @@ function checklvl() {
         soldierimg = "img/soldier-1.png";
         soldierhit = "img/soldier2-1.png";
         soldiershot = "img/soldiershot-1.png";
-        sniperimg = "img/sniper-1.png";
-        snipershoot = "img/sniper2-1.png";
+        sniperimg = "img/Sniper-1.png";
+        snipershoot = "img/Sniper2-1.png";
     }
 }
 
